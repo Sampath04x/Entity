@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="100%" height="100%">
+  <!-- Background Grid Pattern -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(180, 180, 220, 0.15)" stroke-width="1"/>
+      <path d="M 200 0 L 0 0 0 200" fill="none" stroke="rgba(180, 180, 220, 0.3)" stroke-width="1.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="none" />
+  <rect width="100%" height="100%" fill="url(#grid)" />
+  
+  <!-- Architectural line drawings -->
+  <!-- Axis Grid lines -->
+  <line x1="100" y1="50" x2="100" y2="550" stroke="rgba(180, 180, 220, 0.4)" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="300" y1="50" x2="300" y2="550" stroke="rgba(180, 180, 220, 0.4)" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="500" y1="50" x2="500" y2="550" stroke="rgba(180, 180, 220, 0.4)" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="700" y1="50" x2="700" y2="550" stroke="rgba(180, 180, 220, 0.4)" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="900" y1="50" x2="900" y2="550" stroke="rgba(180, 180, 220, 0.4)" stroke-width="1" stroke-dasharray="5,5"/>
+
+  <line x1="50" y1="100" x2="950" y2="100" stroke="rgba(180, 180, 220, 0.4)" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="50" y1="250" x2="950" y2="250" stroke="rgba(180, 180, 220, 0.4)" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="50" y1="400" x2="950" y2="400" stroke="rgba(180, 180, 220, 0.4)" stroke-width="1" stroke-dasharray="5,5"/>
+
+  <!-- Building elevation outline -->
+  <path d="M 150 480 L 150 250 L 350 250 L 350 150 L 650 150 L 650 300 L 850 300 L 850 480 Z" fill="none" stroke="rgba(180, 180, 220, 0.6)" stroke-width="2.5" />
+  
+  <!-- Foundation columns -->
+  <rect x="200" y="480" width="30" height="40" fill="none" stroke="rgba(180, 180, 220, 0.5)" stroke-width="1.5" />
+  <rect x="300" y="480" width="30" height="40" fill="none" stroke="rgba(180, 180, 220, 0.5)" stroke-width="1.5" />
+  <rect x="400" y="480" width="30" height="40" fill="none" stroke="rgba(180, 180, 220, 0.5)" stroke-width="1.5" />
+  <rect x="500" y="480" width="30" height="40" fill="none" stroke="rgba(180, 180, 220, 0.5)" stroke-width="1.5" />
+  <rect x="600" y="480" width="30" height="40" fill="none" stroke="rgba(180, 180, 220, 0.5)" stroke-width="1.5" />
+  <rect x="700" y="480" width="30" height="40" fill="none" stroke="rgba(180, 180, 220, 0.5)" stroke-width="1.5" />
+  <rect x="800" y="480" width="30" height="40" fill="none" stroke="rgba(180, 180, 220, 0.5)" stroke-width="1.5" />
+
+  <!-- Technical Circles -->
+  <circle cx="500" cy="250" r="180" fill="none" stroke="rgba(180, 180, 220, 0.3)" stroke-width="1" stroke-dasharray="10,5"/>
+  <circle cx="500" cy="250" r="120" fill="none" stroke="rgba(180, 180, 220, 0.3)" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Dimensions and labels -->
+  <g stroke="rgba(180, 180, 220, 0.7)" stroke-width="1">
+    <line x1="150" y1="510" x2="850" y2="510" />
+    <line x1="150" y1="505" x2="150" y2="515" />
+    <line x1="850" y1="505" x2="850" y2="515" />
+  </g>
+  <text x="500" y="525" fill="rgba(180, 180, 220, 0.8)" font-family="monospace" font-size="12" text-anchor="middle">SPAN: 28.00m</text>
+  
+  <text x="120" y="245" fill="rgba(180, 180, 220, 0.6)" font-family="monospace" font-size="10">GL L-01</text>
+  <text x="320" y="145" fill="rgba(180, 180, 220, 0.6)" font-family="monospace" font-size="10">ROOF LEVEL</text>
+</svg>

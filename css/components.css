@@ -1,0 +1,269 @@
+/*==========================================================
+ENTITY ENTERPRISES
+Buttons
+==========================================================*/
+
+.btn{
+
+    position:relative;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:0;
+
+    font-family:var(--font-heading);
+
+    font-size:.95rem;
+
+    font-weight:500;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+    color:var(--clr-primary);
+
+    overflow:hidden;
+
+    transition:var(--transition);
+
+}
+
+
+/*====================================
+
+Arrow
+
+====================================*/
+
+.btn svg{
+
+    width:18px;
+
+    height:18px;
+
+    transition:var(--transition);
+
+}
+
+
+/*====================================
+
+Underline
+
+====================================*/
+
+.btn::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:100%;
+
+    height:1px;
+
+    background:currentColor;
+
+    transform:scaleX(.18);
+
+    transform-origin:left;
+
+    transition:.6s cubic-bezier(.16,1,.3,1);
+
+}
+
+
+/*====================================
+
+Hover
+
+====================================*/
+
+.btn:hover{
+
+    letter-spacing:.14em;
+
+}
+
+.btn:hover::after{
+
+    transform:scaleX(1);
+
+}
+
+.btn:hover svg{
+
+    transform:translateX(10px);
+
+}
+
+
+/*====================================
+
+Dark Button
+
+====================================*/
+
+.btn-dark{
+
+    background:var(--clr-primary);
+
+    color:white;
+
+    padding:18px 34px;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+}
+
+
+.btn-dark::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:white;
+
+    transform:translateY(100%);
+
+    transition:.55s cubic-bezier(.16,1,.3,1);
+
+    z-index:-1;
+
+}
+
+
+.btn-dark:hover{
+
+    color:var(--clr-primary);
+
+}
+
+
+.btn-dark:hover::before{
+
+    transform:translateY(0);
+
+}
+
+
+/*====================================
+
+Outline
+
+====================================*/
+
+.btn-outline{
+
+    padding:18px 34px;
+
+    border:1px solid rgba(0,0,0,.08);
+
+    border-radius:999px;
+
+}
+
+
+.btn-outline:hover{
+
+    border-color:var(--clr-primary);
+
+}
+
+
+/*====================================
+
+Ghost
+
+====================================*/
+
+.btn-ghost{
+
+    opacity:.75;
+
+}
+
+
+.btn-ghost:hover{
+
+    opacity:1;
+
+}
+
+
+/*====================================
+
+Large
+
+====================================*/
+
+.btn-large{
+
+    font-size:1.1rem;
+
+}
+
+
+/*====================================
+
+Small
+
+====================================*/
+
+.btn-small{
+
+    font-size:.82rem;
+
+}
+
+
+/*====================================
+
+Icon Circle
+
+====================================*/
+
+.btn-circle{
+
+    width:54px;
+
+    height:54px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(0,0,0,.08);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.45s;
+
+}
+
+
+.btn-circle:hover{
+
+    transform:rotate(45deg);
+
+    background:var(--clr-primary);
+
+    color:white;
+
+}

@@ -1,0 +1,1902 @@
+/*==========================================================
+ENTITY ENTERPRISES
+Hero
+Part 1
+==========================================================*/
+
+.hero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:var(--clr-background);
+
+    isolation:isolate;
+
+}
+
+.hero-wrapper{
+
+    width:min(92%,1400px);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    align-items:center;
+
+    gap:60px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+
+/*==========================================================
+
+CONTENT
+
+==========================================================*/
+
+.hero-content{
+
+    position:relative;
+
+    max-width:760px;
+
+    z-index:10;
+
+}
+
+.hero-label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:35px;
+
+    font-size:.8rem;
+
+    text-transform:uppercase;
+
+    letter-spacing:.35em;
+
+    color:var(--clr-primary);
+
+}
+
+.hero-label::before{
+
+    content:"";
+
+    width:70px;
+
+    height:1px;
+
+    background:var(--clr-primary);
+
+}
+
+.hero-title{
+
+    display:flex;
+
+    flex-direction:column;
+
+    line-height:.88;
+
+    letter-spacing:-.06em;
+
+    font-weight:700;
+
+    color:var(--clr-heading);
+
+}
+
+.hero-title span{
+
+    display:block;
+
+    overflow:hidden;
+
+}
+
+.hero-title .line-one{
+
+    font-size:clamp(4.8rem,7vw,7.5rem);
+
+}
+
+.hero-title .line-two{
+
+    font-size:clamp(4.8rem,7vw,7.5rem);
+
+    margin-left:70px;
+
+}
+
+.hero-title .line-three{
+
+    font-size:clamp(4.8rem,7vw,7.5rem);
+
+}
+
+.hero-title .line-four{
+
+    font-size:clamp(4.8rem,7vw,7.5rem);
+
+    margin-left:120px;
+
+}
+
+.hero-description{
+
+    margin-top:45px;
+
+    max-width:560px;
+
+    font-size:1.05rem;
+
+    line-height:1.9;
+
+    color:#666;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    margin-top:55px;
+
+}
+
+
+/*==========================================================
+
+3D AREA
+
+==========================================================*/
+
+.hero-building{
+
+    position:relative;
+
+    width:100%;
+
+    height:760px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+#three-container{
+
+    width:100%;
+
+    height:100%;
+
+}
+
+
+/*==========================================================
+
+BACKGROUND NUMBER
+
+==========================================================*/
+
+.hero-number{
+
+    position:absolute;
+
+    right:-100px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    font-size:28rem;
+
+    font-weight:700;
+
+    color:rgba(0,0,0,.025);
+
+    pointer-events:none;
+
+}
+
+
+/*==========================================================
+
+LIGHT
+
+==========================================================*/
+
+.hero-light{
+
+    position:absolute;
+
+    width:900px;
+
+    height:900px;
+
+    border-radius:50%;
+
+    right:-250px;
+
+    top:-180px;
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        rgba(255,228,170,.32),
+
+        rgba(255,255,255,.18),
+
+        transparent 72%
+
+    );
+
+    filter:blur(60px);
+
+    z-index:-2;
+
+}
+
+.hero-light-secondary{
+
+    position:absolute;
+
+    left:-260px;
+
+    bottom:-260px;
+
+    width:700px;
+
+    height:700px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        rgba(13,35,70,.06),
+
+        transparent
+
+    );
+
+    filter:blur(90px);
+
+}
+
+
+/*==========================================================
+
+BUILDING GLOW
+
+==========================================================*/
+
+.hero-building::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        rgba(255,255,255,.55),
+
+        transparent
+
+    );
+
+    filter:blur(40px);
+
+}
+
+
+/*==========================================================
+
+SCROLL
+
+==========================================================*/
+
+.scroll-indicator{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:35px;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:15px;
+
+    z-index:20;
+
+}
+
+.scroll-text{
+
+    font-size:.72rem;
+
+    letter-spacing:.35em;
+
+    text-transform:uppercase;
+
+    color:#666;
+
+}
+
+.scroll-line{
+
+    width:1px;
+
+    height:80px;
+
+    background:rgba(0,0,0,.12);
+
+    overflow:hidden;
+
+}
+
+.scroll-line::before{
+
+    content:"";
+
+    display:block;
+
+    width:100%;
+
+    height:40px;
+
+    background:var(--clr-primary);
+
+    animation:scrollDown 2s infinite;
+
+}
+
+@keyframes scrollDown{
+
+0%{
+
+transform:translateY(-45px);
+
+}
+
+100%{
+
+transform:translateY(90px);
+
+}
+
+}
+/*==========================================================
+ENTITY ENTERPRISES
+Hero
+Part 2
+Blueprint + CAD Overlay
+==========================================================*/
+
+
+/*==========================================================
+
+BLUEPRINT
+
+==========================================================*/
+
+.hero-blueprint{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-4;
+
+}
+
+.hero-blueprint img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    opacity:.18;
+
+    mix-blend-mode:multiply;
+
+    animation:blueprintFloat 30s ease-in-out infinite;
+
+}
+
+
+/*==========================================================
+
+MAIN GRID
+
+==========================================================*/
+
+.hero-grid{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:-5;
+
+    pointer-events:none;
+
+    background-image:
+
+        linear-gradient(
+
+            rgba(13,35,70,.045) 1px,
+
+            transparent 1px
+
+        ),
+
+        linear-gradient(
+
+            90deg,
+
+            rgba(13,35,70,.045) 1px,
+
+            transparent 1px
+
+        );
+
+    background-size:70px 70px;
+
+}
+
+
+/*==========================================================
+
+SECOND GRID
+
+==========================================================*/
+
+.hero-grid::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+        linear-gradient(
+
+            rgba(13,35,70,.02) 1px,
+
+            transparent 1px
+
+        ),
+
+        linear-gradient(
+
+            90deg,
+
+            rgba(13,35,70,.02) 1px,
+
+            transparent 1px
+
+        );
+
+    background-size:14px 14px;
+
+}
+
+
+/*==========================================================
+
+ENGINEERING FRAME
+
+==========================================================*/
+
+.hero-grid::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:40px;
+
+    border:1px solid rgba(13,35,70,.08);
+
+}
+
+
+/*==========================================================
+
+CAD CIRCLES
+
+==========================================================*/
+
+.cad-circle{
+
+    position:absolute;
+
+    border:1px solid rgba(13,35,70,.08);
+
+    border-radius:50%;
+
+}
+
+.cad-circle.one{
+
+    width:180px;
+
+    height:180px;
+
+    top:14%;
+
+    right:12%;
+
+}
+
+.cad-circle.two{
+
+    width:300px;
+
+    height:300px;
+
+    bottom:10%;
+
+    left:8%;
+
+}
+
+.cad-circle.three{
+
+    width:100px;
+
+    height:100px;
+
+    bottom:28%;
+
+    right:28%;
+
+}
+
+
+/*==========================================================
+
+AXIS
+
+==========================================================*/
+
+.axis-x{
+
+    position:absolute;
+
+    top:50%;
+
+    left:0;
+
+    width:100%;
+
+    height:1px;
+
+    background:
+
+    linear-gradient(
+
+        transparent,
+
+        rgba(13,35,70,.08),
+
+        transparent
+
+    );
+
+}
+
+.axis-y{
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    width:1px;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+        transparent,
+
+        rgba(13,35,70,.08),
+
+        transparent
+
+    );
+
+}
+
+
+/*==========================================================
+
+MEASUREMENTS
+
+==========================================================*/
+
+.measure{
+
+    position:absolute;
+
+    font-family:monospace;
+
+    font-size:.72rem;
+
+    letter-spacing:.18em;
+
+    color:rgba(13,35,70,.4);
+
+}
+
+.measure.one{
+
+    left:90px;
+
+    top:180px;
+
+}
+
+.measure.two{
+
+    right:120px;
+
+    top:140px;
+
+}
+
+.measure.three{
+
+    left:120px;
+
+    bottom:160px;
+
+}
+
+.measure.four{
+
+    right:160px;
+
+    bottom:120px;
+
+}
+
+
+/*==========================================================
+
+DIMENSION LINES
+
+==========================================================*/
+
+.dimension-line{
+
+    position:absolute;
+
+    background:rgba(13,35,70,.1);
+
+}
+
+.dimension-horizontal{
+
+    width:320px;
+
+    height:1px;
+
+}
+
+.dimension-vertical{
+
+    width:1px;
+
+    height:260px;
+
+}
+
+.dimension-line::before,
+
+.dimension-line::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:7px;
+
+    height:7px;
+
+    border:1px solid rgba(13,35,70,.18);
+
+    background:white;
+
+    transform:rotate(45deg);
+
+}
+
+.dimension-horizontal::before{
+
+    left:-4px;
+
+    top:-3px;
+
+}
+
+.dimension-horizontal::after{
+
+    right:-4px;
+
+    top:-3px;
+
+}
+
+.dimension-vertical::before{
+
+    left:-3px;
+
+    top:-4px;
+
+}
+
+.dimension-vertical::after{
+
+    left:-3px;
+
+    bottom:-4px;
+
+}
+
+
+/*==========================================================
+
+LABELS
+
+==========================================================*/
+
+.blueprint-label{
+
+    position:absolute;
+
+    font-size:.72rem;
+
+    text-transform:uppercase;
+
+    letter-spacing:.25em;
+
+    color:rgba(13,35,70,.38);
+
+}
+
+.label-a{
+
+    top:12%;
+
+    left:7%;
+
+}
+
+.label-b{
+
+    right:10%;
+
+    top:28%;
+
+}
+
+.label-c{
+
+    left:10%;
+
+    bottom:18%;
+
+}
+
+.label-d{
+
+    right:12%;
+
+    bottom:10%;
+
+}
+
+
+/*==========================================================
+
+COORDINATES
+
+==========================================================*/
+
+.coordinate{
+
+    position:absolute;
+
+    font-size:.7rem;
+
+    font-family:monospace;
+
+    color:rgba(13,35,70,.25);
+
+}
+
+.coordinate.one{
+
+    top:90px;
+
+    left:60px;
+
+}
+
+.coordinate.two{
+
+    bottom:70px;
+
+    right:70px;
+
+}
+
+
+/*==========================================================
+
+ENGINEERING NOTES
+
+==========================================================*/
+
+.arch-note{
+
+    position:absolute;
+
+    width:180px;
+
+    font-size:.72rem;
+
+    line-height:1.8;
+
+    color:rgba(13,35,70,.32);
+
+}
+
+.note-left{
+
+    left:70px;
+
+    bottom:210px;
+
+}
+
+.note-right{
+
+    right:60px;
+
+    top:320px;
+
+}
+
+
+/*==========================================================
+
+GRID ANIMATION
+
+==========================================================*/
+
+@keyframes blueprintFloat{
+
+0%{
+
+transform:translate(0,0);
+
+}
+
+25%{
+
+transform:translate(-10px,-4px);
+
+}
+
+50%{
+
+transform:translate(-18px,8px);
+
+}
+
+75%{
+
+transform:translate(8px,4px);
+
+}
+
+100%{
+
+transform:translate(0,0);
+
+}
+
+}
+/*==========================================================
+ENTITY ENTERPRISES
+Hero
+Part 3
+Glass • Depth • Ambient • Premium Effects
+==========================================================*/
+
+
+/*==========================================================
+
+BUILDING CONTAINER
+
+==========================================================*/
+
+.hero-building{
+
+    position:relative;
+
+    isolation:isolate;
+
+    perspective:1800px;
+
+    transform-style:preserve-3d;
+
+}
+
+.hero-building canvas{
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+
+/*==========================================================
+
+SOFT SHADOW
+
+==========================================================*/
+
+.hero-building::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:45px;
+
+    width:420px;
+
+    height:65px;
+
+    transform:translateX(-50%);
+
+    border-radius:50%;
+
+    background:rgba(0,0,0,.18);
+
+    filter:blur(35px);
+
+    opacity:.25;
+
+    z-index:0;
+
+}
+
+
+/*==========================================================
+
+GLASS REFLECTION
+
+==========================================================*/
+
+.hero-glass{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:12;
+
+    overflow:hidden;
+
+}
+
+.hero-glass::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-30%;
+
+    left:-40%;
+
+    width:35%;
+
+    height:170%;
+
+    transform:rotate(18deg);
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.45),
+
+        transparent
+
+    );
+
+    filter:blur(8px);
+
+    animation:glassMove 9s ease-in-out infinite;
+
+}
+
+
+/*==========================================================
+
+VIGNETTE
+
+==========================================================*/
+
+.hero-vignette{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        transparent 48%,
+
+        rgba(0,0,0,.08) 100%
+
+    );
+
+    z-index:8;
+
+}
+
+
+/*==========================================================
+
+DEPTH OVERLAY
+
+==========================================================*/
+
+.hero-depth{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+
+    linear-gradient(
+
+        180deg,
+
+        rgba(255,255,255,.35),
+
+        transparent 28%,
+
+        transparent 72%,
+
+        rgba(0,0,0,.05)
+
+    );
+
+    z-index:6;
+
+}
+
+
+/*==========================================================
+
+LIGHT BEAM
+
+==========================================================*/
+
+.hero-beam{
+
+    position:absolute;
+
+    top:-10%;
+
+    right:18%;
+
+    width:340px;
+
+    height:1200px;
+
+    transform:rotate(12deg);
+
+    background:
+
+    linear-gradient(
+
+        rgba(255,255,255,.18),
+
+        transparent
+
+    );
+
+    filter:blur(80px);
+
+    opacity:.45;
+
+    pointer-events:none;
+
+    z-index:2;
+
+}
+
+
+/*==========================================================
+
+BACKGROUND GRADIENT
+
+==========================================================*/
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(
+
+        circle at top right,
+
+        rgba(255,255,255,.95),
+
+        transparent 45%
+
+    ),
+
+    radial-gradient(
+
+        circle at bottom left,
+
+        rgba(13,35,70,.04),
+
+        transparent 50%
+
+    );
+
+    z-index:-9;
+
+}
+
+
+/*==========================================================
+
+NOISE
+
+==========================================================*/
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:.025;
+
+    pointer-events:none;
+
+    background-image:
+
+    radial-gradient(circle,#000 1px,transparent 1px);
+
+    background-size:9px 9px;
+
+    z-index:20;
+
+}
+
+
+/*==========================================================
+
+FLOATING DOTS
+
+==========================================================*/
+
+.hero-dot{
+
+    position:absolute;
+
+    width:5px;
+
+    height:5px;
+
+    border-radius:50%;
+
+    background:rgba(13,35,70,.15);
+
+}
+
+.dot-one{
+
+    left:12%;
+
+    top:20%;
+
+}
+
+.dot-two{
+
+    left:82%;
+
+    top:30%;
+
+}
+
+.dot-three{
+
+    left:20%;
+
+    bottom:18%;
+
+}
+
+.dot-four{
+
+    right:15%;
+
+    bottom:12%;
+
+}
+
+
+/*==========================================================
+
+AMBIENT CIRCLES
+
+==========================================================*/
+
+.ambient-circle{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    border:1px solid rgba(13,35,70,.05);
+
+    animation:ambientScale 12s ease-in-out infinite;
+
+}
+
+.ambient-one{
+
+    width:480px;
+
+    height:480px;
+
+    left:-120px;
+
+    bottom:-140px;
+
+}
+
+.ambient-two{
+
+    width:620px;
+
+    height:620px;
+
+    right:-220px;
+
+    top:-180px;
+
+    animation-delay:2s;
+
+}
+
+
+/*==========================================================
+
+GLOW
+
+==========================================================*/
+
+.hero-glow{
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    width:520px;
+
+    height:520px;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        rgba(255,255,255,.42),
+
+        transparent
+
+    );
+
+    filter:blur(60px);
+
+    opacity:.75;
+
+    z-index:1;
+
+}
+
+
+/*==========================================================
+
+ANIMATIONS
+
+==========================================================*/
+
+@keyframes glassMove{
+
+0%{
+
+left:-40%;
+
+}
+
+100%{
+
+left:160%;
+
+}
+
+}
+
+@keyframes ambientScale{
+
+0%,100%{
+
+transform:scale(1);
+
+opacity:.4;
+
+}
+
+50%{
+
+transform:scale(1.05);
+
+opacity:.8;
+
+}
+
+}
+/*==========================================================
+ENTITY ENTERPRISES
+Hero
+Part 4
+Final Polish
+==========================================================*/
+
+
+/*==========================================================
+CONTENT ANIMATION HELPERS
+==========================================================*/
+
+.hero-label,
+.hero-title,
+.hero-description,
+.hero-buttons,
+.scroll-indicator{
+
+    will-change:transform,opacity;
+
+}
+
+.hero-title span{
+
+    display:block;
+
+    overflow:hidden;
+
+}
+
+.hero-title span>*{
+
+    display:block;
+
+}
+
+
+/*==========================================================
+BUTTON SPACING
+==========================================================*/
+
+.hero-buttons .btn{
+
+    min-width:220px;
+
+    justify-content:center;
+
+}
+
+
+/*==========================================================
+TEXT SELECTION
+==========================================================*/
+
+.hero ::selection{
+
+    background:var(--clr-primary);
+
+    color:#fff;
+
+}
+
+
+/*==========================================================
+BUILDING HOVER
+==========================================================*/
+
+.hero-building{
+
+    transition:
+
+    transform .8s cubic-bezier(.16,1,.3,1),
+
+    filter .8s;
+
+}
+
+.hero:hover .hero-building{
+
+    filter:drop-shadow(0 40px 80px rgba(0,0,0,.12));
+
+}
+
+
+/*==========================================================
+BLUEPRINT FADE
+==========================================================*/
+
+.hero-blueprint{
+
+    mask-image:
+
+    linear-gradient(
+
+    to bottom,
+
+    transparent,
+
+    black 15%,
+
+    black 85%,
+
+    transparent
+
+    );
+
+}
+
+
+/*==========================================================
+GRID FADE
+==========================================================*/
+
+.hero-grid{
+
+    mask-image:
+
+    radial-gradient(
+
+    circle,
+
+    black 45%,
+
+    transparent 100%
+
+    );
+
+}
+
+
+/*==========================================================
+LIGHT BLEND
+==========================================================*/
+
+.hero-light,
+
+.hero-light-secondary{
+
+    mix-blend-mode:screen;
+
+}
+
+
+/*==========================================================
+THREE CONTAINER
+==========================================================*/
+
+#three-container{
+
+    position:relative;
+
+    z-index:5;
+
+    transform-style:preserve-3d;
+
+    transition:transform .6s ease;
+
+}
+
+.hero:hover #three-container{
+
+    transform:translateY(-8px);
+
+}
+
+
+/*==========================================================
+SCROLL SHADOW
+==========================================================*/
+
+.hero.scrolled{
+
+    box-shadow:
+
+    inset 0 -120px 120px rgba(255,255,255,.95);
+
+}
+
+
+/*==========================================================
+DECORATIVE LINES
+==========================================================*/
+
+.hero-edge-top,
+
+.hero-edge-bottom{
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:min(92%,1400px);
+
+    height:1px;
+
+    background:
+
+    linear-gradient(
+
+    90deg,
+
+    transparent,
+
+    rgba(13,35,70,.08),
+
+    transparent
+
+    );
+
+    pointer-events:none;
+
+}
+
+.hero-edge-top{
+
+    top:90px;
+
+}
+
+.hero-edge-bottom{
+
+    bottom:40px;
+
+}
+
+
+/*==========================================================
+IMAGE RENDERING
+==========================================================*/
+
+.hero img{
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+
+/*==========================================================
+PERFORMANCE
+==========================================================*/
+
+.hero,
+
+.hero *{
+
+    backface-visibility:hidden;
+
+}
+
+.hero-building,
+
+.hero-grid,
+
+.hero-blueprint,
+
+.hero-light,
+
+.hero-light-secondary{
+
+    transform:translateZ(0);
+
+}
+
+
+/*==========================================================
+ACCESSIBILITY
+==========================================================*/
+
+@media (prefers-reduced-motion: reduce){
+
+*{
+
+animation:none !important;
+
+transition:none !important;
+
+scroll-behavior:auto !important;
+
+}
+
+}
+
+
+/*==========================================================
+TABLET
+==========================================================*/
+
+@media(max-width:1200px){
+
+.hero-wrapper{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+gap:80px;
+
+}
+
+.hero-content{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.hero-title .line-two,
+
+.hero-title .line-four{
+
+margin-left:0;
+
+}
+
+.hero-description{
+
+max-width:700px;
+
+}
+
+.hero-building{
+
+width:100%;
+
+height:600px;
+
+}
+
+}
+
+
+/*==========================================================
+MOBILE
+==========================================================*/
+
+@media(max-width:768px){
+
+.hero{
+
+padding-top:120px;
+
+min-height:auto;
+
+}
+
+.hero-title{
+
+font-size:68%;
+
+}
+
+.hero-description{
+
+font-size:.95rem;
+
+line-height:1.8;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+width:100%;
+
+}
+
+.hero-buttons .btn{
+
+width:100%;
+
+}
+
+.hero-building{
+
+height:380px;
+
+}
+
+.hero-grid,
+
+.hero-blueprint,
+
+.hero-vignette,
+
+.hero-depth,
+
+.hero-beam,
+
+.hero-glow,
+
+.ambient-circle,
+
+.hero-dot,
+
+.hero-edge-top,
+
+.hero-edge-bottom{
+
+display:none;
+
+}
+
+}
+
+
+/*==========================================================
+SMALL DEVICES
+==========================================================*/
+
+@media(max-width:480px){
+
+.hero-title{
+
+font-size:58%;
+
+}
+
+.hero-building{
+
+height:300px;
+
+}
+
+.scroll-indicator{
+
+display:none;
+
+}
+
+}
+
+
+/*==========================================================
+END OF HERO
+==========================================================*/
