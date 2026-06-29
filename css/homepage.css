@@ -1,0 +1,255 @@
+/*==========================================================
+ENTITY ENTERPRISES - HOMEPAGE SPECIFIC SECTIONS
+- Why Entity (WHO WE ARE Split Grid)
+- Our Capabilities (Four Pillars Card Deck Grid)
+==========================================================*/
+
+/*----------------------------------------------------------
+1. WHY ENTITY SECTION
+----------------------------------------------------------*/
+.why-entity-section {
+    padding: 90px 0;
+    background: #FAFBFD;
+    position: relative;
+    overflow: hidden;
+}
+
+.why-entity-layout {
+    display: grid;
+    grid-template-columns: 46% 54%;
+    gap: 60px;
+    align-items: center;
+}
+
+.why-entity-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.why-entity-left h2 {
+    font-size: clamp(2.2rem, 3.2vw, 3.2rem);
+    line-height: 1.15;
+    font-weight: 800;
+    color: #081C3A;
+    margin: 18px 0 24px;
+    letter-spacing: -1.2px;
+}
+
+.why-entity-left p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #5F6B7A;
+    margin-bottom: 32px;
+    max-width: 480px;
+}
+
+.why-entity-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: .85rem;
+    font-weight: 700;
+    color: #0D3B8C;
+    text-decoration: none;
+    border-bottom: 2px solid #0D3B8C;
+    padding-bottom: 4px;
+    letter-spacing: .08em;
+    width: fit-content;
+    transition: gap .3s;
+}
+
+.why-entity-link:hover {
+    gap: 14px;
+}
+
+.why-entity-right {
+    position: relative;
+    width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(8, 28, 58, 0.07);
+    aspect-ratio: 16 / 10;
+}
+
+.why-entity-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .6s ease;
+}
+
+.why-entity-right:hover img {
+    transform: scale(1.03);
+}
+
+/*----------------------------------------------------------
+2. OUR CAPABILITIES SECTION (Four Pillars)
+----------------------------------------------------------*/
+.capabilities-section {
+    padding: 90px 0;
+    background: #ffffff;
+    border-top: 1px solid #E6EFFC;
+}
+
+.capabilities-layout-new {
+    display: grid;
+    grid-template-columns: 35% 65%;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.capabilities-left-new {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 120px; /* Sticky positioning when scrolling down */
+}
+
+.capabilities-left-new h2 {
+    font-size: clamp(2.2rem, 3.2vw, 3.2rem);
+    line-height: 1.15;
+    font-weight: 800;
+    color: #081C3A;
+    margin: 18px 0 24px;
+    letter-spacing: -1.2px;
+}
+
+.capabilities-left-new p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #5F6B7A;
+    margin-bottom: 32px;
+}
+
+.capabilities-right-new {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+/* Service Card Design */
+.cap-card {
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #E6EFFC;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(8, 28, 58, 0.015);
+    display: flex;
+    flex-direction: column;
+    transition: transform .4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow .4s ease, border-color .4s ease;
+}
+
+.cap-card:hover {
+    transform: translateY(-8px);
+    border-color: #CBDDF8;
+    box-shadow: 0 20px 40px rgba(8, 28, 58, 0.06);
+}
+
+.cap-card-img {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    position: relative;
+}
+
+.cap-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .6s ease;
+}
+
+.cap-card:hover .cap-card-img img {
+    transform: scale(1.05);
+}
+
+.cap-card-body {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.cap-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: #F1F6FD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: #0D3B8C;
+    transition: background .3s, color .3s;
+}
+
+.cap-icon svg {
+    stroke: #0D3B8C;
+}
+
+.cap-card:hover .cap-icon {
+    background: #0D3B8C;
+    color: #ffffff;
+}
+
+.cap-card:hover .cap-icon svg {
+    stroke: #ffffff;
+}
+
+.cap-card-body h4 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #081C3A;
+    margin: 0 0 12px;
+    line-height: 1.3;
+}
+
+.cap-card-body p {
+    font-size: .95rem;
+    line-height: 1.6;
+    color: #5F6B7A;
+    margin: 0;
+}
+
+/*----------------------------------------------------------
+3. RESPONSIVE MEDIA QUERIES
+----------------------------------------------------------*/
+@media (max-width: 1200px) {
+    .why-entity-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .why-entity-right {
+        order: -1; /* Place image on top on smaller viewports */
+        aspect-ratio: 16 / 9;
+    }
+    
+    .capabilities-layout-new {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .capabilities-left-new {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .why-entity-section,
+    .capabilities-section {
+        padding: 80px 0;
+    }
+    
+    .capabilities-right-new {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .cap-card-body {
+        padding: 24px;
+    }
+}

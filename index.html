@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -45,6 +45,7 @@
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/homepage.css">
     <link rel="stylesheet" href="css/pages.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -88,60 +89,141 @@
     <main>
         <!-- 1. HERO -->
         <header class="hero" id="home">
-            <div class="hero-blueprint"></div>
-            <div class="container hero-container">
+            <div class="hero-layout">
                 <div class="hero-left">
                     <span class="hero-tag">BUILDING EXCELLENCE SINCE 2016</span>
                     <h1 class="hero-title">
                         Building Commercial Spaces That Inspire Growth.
                     </h1>
                     <p class="hero-description">
-                        Entity Enterprises delivers premium commercial construction, turnkey interiors, architecture and infrastructure solutions across India with a commitment to quality, precision and timely execution.
+                        Commercial construction, turnkey interiors and architectural solutions&mdash;delivered with precision, on time, every time.
                     </p>
                     <div class="hero-buttons">
-                        <a href="contact.html" class="btn btn-primary">Request Consultation</a>
-                        <a href="projects.html" class="btn btn-secondary">View Projects</a>
+                        <a href="projects.html" class="hero-explore-link">EXPLORE OUR WORK &nbsp;&rarr;</a>
                     </div>
-                    <div class="hero-stats">
-                        <div>
-                            <h2>350+</h2>
-                            <span>Projects</span>
+
+                    <!-- Floating Math Formulas (naked, animated) -->
+                    <div class="blueprint-formulas floating-element">
+                        <svg width="120" height="60" viewBox="0 0 120 60" fill="none">
+                            <text x="5" y="20" font-family="'Courier New', Courier, monospace" font-size="14" fill="#0D3B8C" opacity="0.35" font-weight="bold">P = 2(l + w)</text>
+                            <text x="5" y="45" font-family="'Courier New', Courier, monospace" font-size="14" fill="#0D3B8C" opacity="0.35" font-weight="bold">A = l &times; w</text>
+                        </svg>
+                    </div>
+
+                    <!-- Floating Large Blueprint Schematic (animated) -->
+                    <div class="blueprint-schematic-wrapper">
+                        <svg class="blueprint-schematic spinning-element" width="380" height="380" viewBox="0 0 400 400" fill="none" stroke="#0D3B8C" stroke-width="0.8" opacity="0.35">
+                            <circle cx="200" cy="200" r="120" stroke-dasharray="2, 4"/>
+                            <circle cx="200" cy="200" r="100"/>
+                            <circle cx="200" cy="200" r="70"/>
+                            <circle cx="200" cy="200" r="40"/>
+                            <circle cx="200" cy="200" r="10" stroke-dasharray="1, 1"/>
+                            
+                            <line x1="50" y1="200" x2="350" y2="200" stroke-dasharray="1, 3"/>
+                            <line x1="200" y1="50" x2="200" y2="350" stroke-dasharray="1, 3"/>
+                            
+                            <line x1="94" y1="94" x2="306" y2="306"/>
+                            <line x1="94" y1="306" x2="306" y2="94"/>
+                            
+                            <circle cx="200" cy="200" r="105" stroke-dasharray="1, 10" stroke-width="2"/>
+                            
+                            <path d="M 80 200 A 120 120 0 0 1 200 80" stroke-dasharray="3, 3"/>
+                            <path d="M 320 200 A 120 120 0 0 1 200 320" stroke-dasharray="3, 3"/>
+                            
+                            <text x="205" y="90" font-family="monospace" font-size="8" fill="#0D3B8C" stroke="none">90&deg;</text>
+                            <text x="205" y="315" font-family="monospace" font-size="8" fill="#0D3B8C" stroke="none">270&deg;</text>
+                            <text x="315" y="195" font-family="monospace" font-size="8" fill="#0D3B8C" stroke="none">0&deg;</text>
+                            <text x="75" y="195" font-family="monospace" font-size="8" fill="#0D3B8C" stroke="none">180&deg;</text>
+                            
+                            <path d="M 40,40 L 160,160 M 360,40 L 240,160 M 40,360 L 160,240 M 360,360 L 240,240" opacity="0.3"/>
+                        </svg>
+                        
+                        <div class="schematic-annotations">
+                            <span class="coord-label x-coord">GRID REF: C-12</span>
+                            <span class="coord-label y-coord">SCALE: 1:50</span>
                         </div>
-                        <div>
-                            <h2>9+</h2>
-                            <span>Years</span>
-                        </div>
-                        <div>
-                            <h2>28</h2>
-                            <span>Cities</span>
-                        </div>
-                        <div>
-                            <h2>8</h2>
-                            <span>States</span>
-                        </div>
+                    </div>
+
+
+                    <!-- Bottom-Left Elevation Drawing -->
+                    <div class="blueprint-elevation">
+                        <svg width="180" height="90" viewBox="0 0 180 90" fill="none" stroke="#0D3B8C" stroke-width="0.8" opacity="0.25">
+                            <rect x="5" y="25" width="130" height="60"/>
+                            <rect x="30" y="10" width="80" height="15"/>
+                            <line x1="5" y1="40" x2="135" y2="40"/>
+                            <line x1="5" y1="55" x2="135" y2="55"/>
+                            <line x1="5" y1="70" x2="135" y2="70"/>
+                            <line x1="35" y1="25" x2="35" y2="85"/>
+                            <line x1="70" y1="25" x2="70" y2="85"/>
+                            <line x1="105" y1="25" x2="105" y2="85"/>
+                            <line x1="150" y1="25" x2="150" y2="85" stroke-dasharray="2,2"/>
+                            <line x1="145" y1="25" x2="155" y2="25"/>
+                            <line x1="145" y1="85" x2="155" y2="85"/>
+                            <text x="160" y="58" font-family="monospace" font-size="7" fill="#0D3B8C" stroke="none">H: 12m</text>
+                        </svg>
+                        <div class="elevation-label">ELEVATION<br>SCALE 1:100</div>
                     </div>
                 </div>
+
                 <div class="hero-right">
-                    <img src="assets/hero/hero.webp" alt="Entity Enterprises Commercial Construction Project" class="hero-image-wrapper" loading="eager" fetchpriority="high" decoding="async">
-                    <div class="floating-project-card">
-                        <span>FEATURED PROJECT</span>
-                        <h3>National Commission for Indian System of Medicine</h3>
-                        <p>Government of India</p>
-                        <a href="projects.html">Explore Project â†’</a>
+                    <img src="assets/projects/3M/entity-enterprises-project.jpg" alt="Entity Enterprises Modern Office Architecture Design" loading="eager" fetchpriority="high" decoding="async">
+                </div>
+            </div>
+
+            <!-- Stats Overlay Banner -->
+            <div class="hero-stats-overlay">
+                <div class="hero-stat-col">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="9" y1="6" x2="15" y2="6"/><line x1="9" y1="10" x2="15" y2="10"/><line x1="9" y1="14" x2="15" y2="14"/><line x1="9" y1="18" x2="15" y2="18"/></svg>
+                    </div>
+                    <div class="stat-text">
+                        <h3>350+</h3>
+                        <span>Projects Delivered</span>
+                    </div>
+                </div>
+                <div class="hero-stat-col">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div class="stat-text">
+                        <h3>150+</h3>
+                        <span>Happy Clients</span>
+                    </div>
+                </div>
+                <div class="hero-stat-col">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <div class="stat-text">
+                        <h3>15+</h3>
+                        <span>Years Experience</span>
+                    </div>
+                </div>
+                <div class="hero-stat-col">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                    </div>
+                    <div class="stat-text">
+                        <h3>100%</h3>
+                        <span>Commitment to Quality</span>
                     </div>
                 </div>
             </div>
         </header>
+
+
 
         <!-- 2. TRUSTED CLIENTS -->
         <section class="trusted-section">
             <div class="container">
                 <div class="section-heading center">
                     <span class="section-tag">TRUSTED BY LEADING BRANDS</span>
-                    <h2 class="section-title">Delivering Excellence Across Industries</h2>
+                    <h2 class="section-title">Trusted by India's Leading
+Brands & Institutions</h2>
                     <p class="section-description">
-                        Our expertise has earned the trust of leading government organizations and renowned brands across India.
-                    </p>
+From Government institutions to Fortune companies,
+our projects are built on quality, transparency
+and timely execution.                    </p>
                 </div>
                 <div class="client-marquee">
                     <div class="client-track">
@@ -158,251 +240,108 @@
                 </div>
             </div>
         </section>
+<section class="why-entity-section" id="about">
+    <div class="container">
+        <div class="why-entity-layout">
+            <div class="why-entity-left">
+                <span class="section-tag">WHY ENTITY</span>
+                <h2>One Partner.<br>Every Stage.<br>Zero Compromise<span class="dot">.</span></h2>
+                <p>From planning and architecture to construction, interiors and final handover, Entity Enterprises delivers every project through one integrated team focused on quality, transparency and timely execution.</p>
+                <a href="about.html" class="why-entity-link">ABOUT ENTITY &nbsp;→</a>
+            </div>
+            <div class="why-entity-right">
+                <img src="assets/hero/Entity-01.png" alt="Entity Enterprises Commercial Office Construction">
+            </div>
+        </div>
+    </div>
+</section>
 
-        <!-- 3. WHO WE ARE -->
-        <section class="home-about" id="about">
+        <!-- 4. SERVICES -->
+        <section class="capabilities-section">
             <div class="container">
-                <div class="home-about-grid">
-                    <div class="home-about-image">
-                        <img src="assets/hero/about-company.webp" alt="Entity Enterprises Office Construction Team" loading="lazy" decoding="async">
+                <div class="capabilities-layout-new">
+                    <!-- Left: label + heading + desc + link -->
+                    <div class="capabilities-left-new">
+                        <span class="section-tag">OUR CAPABILITIES</span>
+                        <h2>Four disciplines.<br>One execution<br>partner.</h2>
+                        <p>Every successful project depends on seamless coordination. We bring architecture, construction, interiors and project management together under one experienced team.</p>
+                        <a href="about.html#services" class="why-entity-link">EXPLORE SERVICES &nbsp;→</a>
                     </div>
-                    <div class="home-about-content">
-                        <span class="section-tag">WHO WE ARE</span>
-                        <h2 class="section-title">Delivering Quality Construction & Turnkey Solutions Across India.</h2>
-                        <p>
-                            Entity Enterprises has been delivering commercial construction, architectural, interior fit-out and infrastructure solutions for over nine years.
-                        </p>
-                        <p>
-                            Our commitment to quality workmanship, timely delivery and client satisfaction has enabled us to successfully complete more than 350 projects across 28 cities in 8 states.
-                        </p>
-                        <div class="about-highlights">
-                            <div>âœ“ Experienced Team</div>
-                            <div>âœ“ Turnkey Execution</div>
-                            <div>âœ“ Government Projects</div>
-                            <div>âœ“ PAN India Presence</div>
+
+                    <!-- Right: 4 service cards -->
+                    <div class="capabilities-right-new">
+                        <div class="cap-card">
+                            <div class="cap-card-img">
+                                <img src="assets/projects/Multani/entity-enterprises-Multani-pharma.png" alt="Commercial Construction">
+                            </div>
+                            <div class="cap-card-body">
+                                <div class="cap-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0D3B8C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="17"/><line x1="9.5" y1="14.5" x2="14.5" y2="14.5"/></svg>
+                                </div>
+                                <h4>Commercial<br>Construction</h4>
+                                <p>End-to-end construction with a focus on safety, quality and timely delivery.</p>
+                            </div>
                         </div>
-                        <a href="about.html" class="btn btn-primary">Learn More</a>
+
+                        <div class="cap-card">
+                            <div class="cap-card-img">
+                                <img src="assets/projects/Honda-Dilshad/entity-enterprises-honda-dilshad.jpeg" alt="Turnkey Interiors">
+                            </div>
+                            <div class="cap-card-body">
+                                <div class="cap-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0D3B8C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                </div>
+                                <h4>Turnkey<br>Interiors</h4>
+                                <p>Functional, modern and inspiring interiors tailored to your business.</p>
+                            </div>
+                        </div>
+
+                        <div class="cap-card">
+                            <div class="cap-card-img">
+                                <img src="assets/projects/Ritu-KIA/entity_enterprises_kia_project.png" alt="Architecture & Design">
+                            </div>
+                            <div class="cap-card-body">
+                                <div class="cap-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0D3B8C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                                </div>
+                                <h4>Architecture &<br>Design</h4>
+                                <p>Thoughtful design that combines aesthetics, functionality and value.</p>
+                            </div>
+                        </div>
+
+                        <div class="cap-card">
+                            <div class="cap-card-img">
+                                <img src="assets/projects/Ritu-KIA/Entity-Enterprises-ritu-kia.jpg" alt="Project Management">
+                            </div>
+                            <div class="cap-card-body">
+                                <div class="cap-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0D3B8C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                                </div>
+                                <h4>Project<br>Management</h4>
+                                <p>Structured planning, transparent tracking and complete accountability.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. SERVICES -->
-        <section class="services-home">
 
-<div class="container">
 
-<div class="section-heading">
-
-<span>OUR EXPERTISE</span>
-
-<h2>
-
-Integrated Design,
-Construction &
-Project Delivery
-
-</h2>
-
-<p>
-
-From commercial buildings to turnkey interiors,
-we provide complete engineering and execution
-solutions across India.
-
-</p>
-
-</div>
-
-<div class="service-showcase">
-
-<article class="service-row">
-
-<div class="service-number">
-
-01
-
-</div>
-
-<div class="service-content">
-
-<h3>
-
-Commercial Construction
-
-</h3>
-
-<p>
-
-Commercial offices,
-institutional buildings,
-industrial infrastructure
-and large-scale civil works.
-
-</p>
-
-<a href="projects.html">
-
-Explore Projects →
-
-</a>
-
-</div>
-
-<div class="service-image">
-
-<img src="assets/services/commercial.webp"
-alt="Commercial Construction">
-
-</div>
-
-</article>
-
-<hr>
-
-<article class="service-row reverse">
-
-<div class="service-image">
-
-<img src="assets/services/interior.webp"
-alt="Turnkey Interiors">
-
-</div>
-
-<div class="service-content">
-
-<h3>
-
-Turnkey Interiors
-
-</h3>
-
-<p>
-
-Workspace interiors,
-corporate fit-outs,
-furniture,
-MEP coordination
-and complete execution.
-
-</p>
-
-<a href="projects.html">
-
-Explore Projects →
-
-</a>
-
-</div>
-
-<div class="service-number">
-
-02
-
-</div>
-
-</article>
-
-<hr>
-
-<article class="service-row">
-
-<div class="service-number">
-
-03
-
-</div>
-
-<div class="service-content">
-
-<h3>
-
-Architecture & Planning
-
-</h3>
-
-<p>
-
-Planning,
-working drawings,
-coordination
-and technical documentation.
-
-</p>
-
-<a href="projects.html">
-
-Explore Projects →
-
-</a>
-
-</div>
-
-<div class="service-image">
-
-<img src="assets/services/architecture.webp">
-
-</div>
-
-</article>
-
-<hr>
-
-<article class="service-row reverse">
-
-<div class="service-image">
-
-<img src="assets/services/project.webp">
-
-</div>
-
-<div class="service-content">
-
-<h3>
-
-Project Management
-
-</h3>
-
-<p>
-
-Scheduling,
-procurement,
-quality assurance,
-site coordination
-and project delivery.
-
-</p>
-
-<a href="projects.html">
-
-Explore Projects →
-
-</a>
-
-</div>
-
-<div class="service-number">
-
-04
-
-</div>
-
-</article>
-
-</div>
-
-</div>
-
-</section>
 
         <section class="featured-projects">
 
 <div class="container">
 
-<div class="section-heading">
+<div class="projects-header">
 
-<span>SELECTED PROJECTS</span>
+<div>
+
+<span class="section-tag">
+
+SELECTED PROJECTS
+
+</span>
 
 <h2>
 
@@ -412,10 +351,13 @@ Across India.
 
 </h2>
 
+</div>
+
 <p>
 
-A selection of commercial, institutional and turnkey
-projects delivered with engineering precision.
+Every project reflects our commitment to
+engineering precision, execution quality
+and long-term performance.
 
 </p>
 
@@ -428,7 +370,7 @@ projects delivered with engineering precision.
 <div class="project-image">
 
 <img
-src="assets/projects/ncism/cover.webp"
+src="assets/projects/ncism/entity_enterprises_NCISM.png"
 alt="NCISM">
 
 </div>
@@ -449,11 +391,27 @@ National Commission for Indian System of Medicine
 
 <ul>
 
-<li>Client : Government of India</li>
+<li>
 
-<li>Location : New Delhi</li>
+<span>Client</span>
 
-<li>Service : Commercial Construction</li>
+<strong>Government of India</strong>
+</li>
+
+<li>
+
+<span>Location</span>
+
+<strong>New Delhi</strong>
+
+</li>
+<li>
+
+<span>Service</span>
+
+<strong>Commercial Construction</strong>
+
+</li>
 
 </ul>
 
@@ -467,7 +425,7 @@ View Case Study →
 
 </article>
 
-<hr>
+
 
 <article class="project-item reverse">
 
@@ -506,21 +464,19 @@ View Case Study →
 <div class="project-image">
 
 <img
-src="assets/projects/3m/cover.webp"
+src="assets/projects/3m/entity_enterprises_3M.png"
 alt="3M">
 
 </div>
 
 </article>
 
-<hr>
-
 <article class="project-item">
 
 <div class="project-image">
 
 <img
-src="assets/projects/honda/cover.webp"
+src="assets/projects/Honda-Agra/entity-enterprises-honda-agra-02.jpg"
 alt="Honda">
 
 </div>
@@ -543,7 +499,7 @@ Honda Showroom Development
 
 <li>Client : Honda</li>
 
-<li>Location : India</li>
+<li>Location : Agra , India</li>
 
 <li>Service : Commercial Construction</li>
 
@@ -662,10 +618,11 @@ Explore Projects
 
     <!-- Floating Contact Bar -->
     <div class="floating-contact">
-        <a href="tel:+91XXXXXXXXXX">ðŸ“ž Call</a>
-        <a href="https://wa.me/91XXXXXXXXXX">ðŸ’¬ WhatsApp</a>
-        <a href="contact.html">âœ‰ Contact</a>
+        <a href="tel:+91XXXXXXXXXX">&#9742; Call</a>
+        <a href="https://wa.me/91XXXXXXXXXX">&#128172; WhatsApp</a>
+        <a href="contact.html">&#9993; Contact</a>
     </div>
+
 
     <!-- Image Hover Preview Element -->
     <div id="image-preview">

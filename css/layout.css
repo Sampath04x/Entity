@@ -1,4 +1,4 @@
-﻿/*==========================================================
+/*==========================================================
 ENTITY ENTERPRISES
 Layout + Sections
 ==========================================================*/
@@ -1388,7 +1388,7 @@ FEATURED PROJECTS
 
 .featured-projects{
 
-padding:150px 0;
+padding:90px 0;
 
 background:white;
 
@@ -1553,7 +1553,7 @@ PROCESS
 
 .process-section{
 
-padding:150px 0;
+padding:90px 0;
 
 background:#F8FAFC;
 
@@ -2024,6 +2024,22 @@ flex-wrap:wrap;
 
 margin-bottom:70px;
 
+}
+
+.cta-buttons .btn {
+    color: white;
+}
+
+.cta-buttons .btn::after {
+    background: white;
+}
+
+.cta-buttons .btn-outline {
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.cta-buttons .btn-outline:hover {
+    border-color: white;
 }
 
 .btn-outline-light{
