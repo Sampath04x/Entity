@@ -414,50 +414,76 @@ Timeline
 ==========================================================*/
 
 function initTimeline() {
-
-    const timeline = document.querySelector(".timeline");
-
-    const progress = document.querySelector(".timeline-progress");
-
+    const wavyContainer = document.querySelector(".timeline-wavy-container");
+    const activePath = document.querySelector(".timeline-path-active");
     const steps = document.querySelectorAll(".timeline-step");
 
-    if (!timeline || !progress || !steps.length) return;
+    // Fallback variables for old timeline if any
+    const timeline = document.querySelector(".timeline");
+    const progress = document.querySelector(".timeline-progress");
 
-    // Initial check on load
-    steps.forEach(step => {
-        const r = step.getBoundingClientRect();
-        if (r.top < window.innerHeight * 0.8) {
-            step.classList.add("active");
+    if (!wavyContainer && !timeline) return;
+
+    let pathLength = 0;
+    if (activePath) {
+        pathLength = activePath.getTotalLength();
+        activePath.style.strokeDasharray = pathLength;
+        activePath.style.strokeDashoffset = pathLength;
+    }
+
+    function updateTimeline() {
+        let container, total, rect;
+
+        if (wavyContainer) {
+            container = wavyContainer;
+            rect = wavyContainer.getBoundingClientRect();
+            total = wavyContainer.offsetHeight;
+        } else if (timeline) {
+            container = timeline;
+            rect = timeline.getBoundingClientRect();
+            total = timeline.offsetHeight;
         }
-    });
 
-    window.addEventListener("scroll", () => {
-
-        const rect = timeline.getBoundingClientRect();
-
-        const total = timeline.offsetHeight;
+        if (!container) return;
 
         let percent = ((window.innerHeight - rect.top) / total) * 100;
-
         percent = Math.max(0, Math.min(percent, 100));
 
-        progress.style.height = percent + "%";
+        if (wavyContainer) {
+            if (window.innerWidth > 1024) {
+                if (activePath) {
+                    const offset = pathLength - (percent / 100) * pathLength;
+                    activePath.style.strokeDashoffset = offset;
+                }
+            } else {
+                wavyContainer.style.setProperty('--mobile-timeline-height', percent + '%');
+            }
+        } else if (progress) {
+            progress.style.height = percent + "%";
+        }
 
         steps.forEach(step => {
-
-            const r = step.getBoundingClientRect();
-
-            if (r.top < window.innerHeight * 0.8) {
-
+            const node = step.querySelector(".timeline-node") || step;
+            const r = node.getBoundingClientRect();
+            if (r.top < window.innerHeight * 0.82) {
                 step.classList.add("active");
-
             }
-
         });
+    }
 
+    // Initial check on load
+    updateTimeline();
+
+    window.addEventListener("scroll", updateTimeline);
+    window.addEventListener("resize", () => {
+        if (activePath) {
+            pathLength = activePath.getTotalLength();
+            activePath.style.strokeDasharray = pathLength;
+        }
+        updateTimeline();
     });
-
 }
+
 
 /*==========================================================
 

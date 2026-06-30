@@ -1474,11 +1474,11 @@ text-transform:uppercase;
 
 .project-content h3{
 
-font-size:clamp(2.5rem,4vw,4rem);
+font-size:clamp(1.8rem, 2.8vw, 2.6rem);
 
-margin:25px 0;
+margin:20px 0;
 
-line-height:1.1;
+line-height:1.2;
 
 }
 
@@ -3067,4 +3067,409 @@ ARCHITECTURAL CAD & BLUEPRINT FILLERS
 @keyframes rotateSlowly {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
-}
+}
+
+/* NEW S-CURVE TIMELINE PROCESS SECTION */
+.workflow-grid {
+    display: grid;
+    grid-template-columns: 38% 62%;
+    gap: 60px;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2;
+}
+
+.workflow-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.workflow-left h2 {
+    font-size: clamp(2.2rem, 3.2vw, 3.2rem);
+    line-height: 1.15;
+    font-weight: 800;
+    color: #081C3A;
+    margin: 18px 0 24px;
+    letter-spacing: -1.2px;
+}
+
+.workflow-left p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #5F6B7A;
+    margin-bottom: 35px;
+}
+
+.workflow-features-card {
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #E6EFFC;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(8, 28, 58, 0.015);
+}
+
+.workflow-feature-item {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.workflow-feature-item:last-child {
+    margin-bottom: 0;
+}
+
+.workflow-feature-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #F0F6FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #0D3B8C;
+}
+
+.workflow-feature-icon svg {
+    stroke: #0D3B8C;
+}
+
+.workflow-feature-text h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #081C3A;
+    margin: 0 0 6px 0;
+}
+
+.workflow-feature-text p {
+    font-size: 0.9rem;
+    color: #5F6B7A;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Wavy Timeline Right Column */
+.timeline-wavy-container {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline-step {
+    display: grid;
+    grid-template-columns: 1fr 120px 1fr;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 50px;
+}
+
+.timeline-step:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-svg-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.timeline-svg-wrapper svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.timeline-path-bg {
+    fill: none;
+    stroke: #E2E8F0;
+    stroke-width: 3px;
+    stroke-linecap: round;
+}
+
+.timeline-path-active {
+    fill: none;
+    stroke: #0D3B8C;
+    stroke-width: 3px;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.1s linear;
+}
+
+.timeline-node-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    height: 100px;
+}
+
+.timeline-node {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 2px solid #E2E8F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #081C3A;
+    box-shadow: 0 4px 12px rgba(8, 28, 58, 0.05);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.timeline-step.active .timeline-node {
+    background: #0D3B8C;
+    border-color: #0D3B8C;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(13, 59, 140, 0.3);
+    transform: scale(1.1);
+}
+
+.timeline-card-wrapper {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: all 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 2;
+}
+
+.timeline-step.active .timeline-card-wrapper {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-card-new {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #E6EFFC;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(8, 28, 58, 0.015);
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.timeline-card-new:hover {
+    border-color: #CBDDF8;
+    box-shadow: 0 15px 30px rgba(8, 28, 58, 0.05);
+    transform: translateY(-5px);
+}
+
+.timeline-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #F0F6FF;
+    color: #0D3B8C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+.timeline-card-icon svg {
+    stroke: #0D3B8C;
+    transition: stroke 0.3s;
+}
+
+.timeline-step.active .timeline-card-icon {
+    background: #0D3B8C;
+    color: #ffffff;
+}
+
+.timeline-step.active .timeline-card-icon svg {
+    stroke: #ffffff;
+}
+
+.timeline-card-text h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #081C3A;
+    margin: 0 0 8px 0;
+}
+
+.timeline-card-text p {
+    font-size: 0.92rem;
+    color: #5F6B7A;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* CAD Background Wireframe Overlays */
+.bg-wireframe-crane {
+    position: absolute;
+    right: -20px;
+    top: 80px;
+    width: 340px;
+    height: auto;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 0;
+    color: #0D3B8C;
+}
+
+.bg-wireframe-building {
+    position: absolute;
+    left: -20px;
+    bottom: 40px;
+    width: 280px;
+    height: auto;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 0;
+    color: #0D3B8C;
+}
+
+/* RESPONSIVE TIMELINE OVERRIDES */
+@media (max-width: 1024px) {
+    .workflow-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .workflow-left {
+        max-width: 650px;
+        margin: 0 auto;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .workflow-left span.section-tag {
+        margin: 0 auto 10px !important;
+    }
+    
+    .workflow-features-card {
+        text-align: left;
+    }
+
+    .timeline-wavy-container {
+        position: relative;
+        max-width: 650px;
+        margin: 40px auto 0;
+        padding-left: 10px;
+    }
+    
+    .timeline-wavy-container::before {
+        content: "";
+        position: absolute;
+        left: 35px;
+        top: 10px;
+        bottom: 10px;
+        width: 3px;
+        background: #E2E8F0;
+        z-index: 1;
+    }
+    
+    .timeline-wavy-container::after {
+        content: "";
+        position: absolute;
+        left: 35px;
+        top: 10px;
+        width: 3px;
+        background: #0D3B8C;
+        z-index: 2;
+        height: var(--mobile-timeline-height, 0%);
+        max-height: calc(100% - 20px);
+        transition: height 0.1s linear;
+    }
+    
+    .timeline-svg-wrapper {
+        display: none !important;
+    }
+    
+    .grid-spacer {
+        display: none !important;
+    }
+
+    .timeline-step {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        gap: 20px;
+        align-items: flex-start;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .timeline-step:last-child {
+        margin-bottom: 0;
+    }
+    
+    .timeline-node-container {
+        order: 1;
+        flex-shrink: 0;
+        grid-column: auto !important;
+        height: auto;
+    }
+    
+    .timeline-node {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .timeline-card-wrapper {
+        order: 2;
+        flex: 1;
+        min-width: 0;
+        grid-column: auto !important;
+        opacity: 1 !important;
+        transform: none !important;
+        width: auto !important;
+    }
+    
+    .timeline-card-new {
+        padding: 20px;
+    }
+    
+    .bg-wireframe-crane,
+    .bg-wireframe-building {
+        display: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-wavy-container {
+        padding-left: 0;
+    }
+    
+    .timeline-wavy-container::before,
+    .timeline-wavy-container::after {
+        left: 20px;
+    }
+    
+    .timeline-node {
+        width: 40px;
+        height: 40px;
+        font-size: 0.95rem;
+    }
+    
+    .timeline-card-new {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .timeline-card-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+    }
+    
+    .timeline-card-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+
+
+
