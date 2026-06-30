@@ -2911,3 +2911,160 @@ rotate(45deg);
 background:#fff;
 
 }
+
+/*==========================================================
+ARCHITECTURAL CAD & BLUEPRINT FILLERS
+==========================================================*/
+
+.bg-blueprint-grid {
+    position: relative;
+}
+
+.bg-blueprint-grid::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: 
+        radial-gradient(rgba(13, 59, 140, 0.035) 1.2px, transparent 1.2px),
+        linear-gradient(rgba(13, 59, 140, 0.012) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(13, 59, 140, 0.012) 1px, transparent 1px);
+    background-size: 24px 24px, 120px 120px, 120px 120px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.cad-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(13, 59, 140, 0.08);
+    position: relative;
+    margin: 0;
+    padding: 0;
+    z-index: 5;
+}
+
+.cad-divider::before {
+    content: "+";
+    position: absolute;
+    left: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: monospace;
+    font-size: 14px;
+    color: rgba(13, 59, 140, 0.4);
+}
+
+.cad-divider::after {
+    content: "+";
+    position: absolute;
+    right: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: monospace;
+    font-size: 14px;
+    color: rgba(13, 59, 140, 0.4);
+}
+
+.cad-divider .cad-metadata {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #FAFBFD;
+    padding: 0 15px;
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: rgba(13, 59, 140, 0.45);
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.cad-divider.white-bg .cad-metadata {
+    background: #ffffff;
+}
+
+.projects-blueprint-container {
+    position: relative;
+}
+
+.projects-blueprint-line-y {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba(13, 59, 140, 0.04);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.projects-blueprint-line-x {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(13, 59, 140, 0.04);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.blueprint-dimension {
+    position: absolute;
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.62rem;
+    font-weight: 500;
+    color: rgba(13, 59, 140, 0.25);
+    z-index: 2;
+    letter-spacing: 1px;
+    pointer-events: none;
+}
+
+.timeline-container-wrapper {
+    position: relative;
+}
+
+.timeline-cad-overlay {
+    position: absolute;
+    width: 280px;
+    height: 220px;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.timeline-step.active .timeline-cad-overlay {
+    opacity: 0.12;
+    transform: scale(1.03);
+}
+
+.timeline-cad-left {
+    left: 4%;
+}
+
+.timeline-cad-right {
+    right: 4%;
+}
+
+@media (max-width: 1200px) {
+    .timeline-cad-overlay {
+        display: none;
+    }
+}
+
+.rotating-watermark-wrapper {
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    opacity: 0.02;
+    pointer-events: none;
+    z-index: 1;
+    animation: rotateSlowly 180s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes rotateSlowly {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}

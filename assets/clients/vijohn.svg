@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="120" height="40" viewBox="0 0 120 40">
-  <g fill="none" stroke="#5F7D95" stroke-width="2">
-    <path d="M 52,10 L 60,6 L 68,10 L 68,20 C 68,26 60,32 60,32 C 60,32 52,26 52,20 Z" />
-    <path d="M 56,15 L 60,19 L 64,12" stroke-width="1.5" />
-  </g>
-</svg>
