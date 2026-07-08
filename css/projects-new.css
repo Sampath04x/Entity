@@ -485,35 +485,28 @@
 
 /* Card slideshow / scroll effect for projects with multiple images */
 .pv2-slideshow {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  position: relative !important;
 }
 
 .pv2-slideshow-track {
-  display: flex;
-  width: calc(100% * var(--n));
-  height: 100%;
-  animation: pv2-slideshow-scroll var(--duration, 15s) infinite alternate ease-in-out;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  width: calc(100% * var(--n)) !important;
+  height: 100% !important;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
 }
 
 .pv2-slideshow-track img {
   width: calc(100% / var(--n)) !important;
-  height: 100%;
-  object-fit: cover;
-  flex-shrink: 0;
+  height: 100% !important;
+  object-fit: cover !important;
+  flex-shrink: 0 !important;
+  display: block !important;
   transition: none !important; /* disable scale transition within track */
-}
-
-/* Pause scroll animation on hover so visitor can focus */
-.pv2-img-card:hover .pv2-slideshow-track {
-  animation-play-state: paused;
-}
-
-@keyframes pv2-slideshow-scroll {
-  0%, 10% { transform: translateX(0); }
-  90%, 100% { transform: translateX(calc(-100% + (100% / var(--n)))); }
 }
 
 /* Blueprint placeholder when no image */

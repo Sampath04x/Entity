@@ -84,10 +84,9 @@ let featIdx = 0;
 function buildImgCard(p) {
   let imgHTML = '';
   if (p.images && p.images.length > 1) {
-    const duration = Math.max(8, p.images.length * 3.5);
     imgHTML = [
       '<div class="pv2-slideshow">',
-        '<div class="pv2-slideshow-track" style="--n: ' + p.images.length + '; --duration: ' + duration + 's;">',
+        '<div class="pv2-slideshow-track" style="--n: ' + p.images.length + ';">',
           p.images.map(function(imgSrc) {
             return '<img src="' + imgSrc + '" alt="' + p.shortName + '" loading="lazy" width="400" height="300" onerror="this.parentElement.classList.add(\'no-img\')">';
           }).join(''),
@@ -112,7 +111,7 @@ function buildImgCard(p) {
   ].join('');
 }
 
-/* â”€â”€ Category section builder â”€â”€ */
+/* ── Category section builder ── */
 function buildCatSection(cat, idx) {
   const list = PROJECTS.filter(function(p){ return p.category === cat.key; });
   const total = list.length;
@@ -139,11 +138,20 @@ function buildCatSection(cat, idx) {
   ].join('');
 }
 
-/* â”€â”€ Render page of cards â”€â”€ */
+/* ── Render page of cards ── */
 function renderCatPage(key) {
   const s = catState[key];
   const grid = document.getElementById('pv2-grid-' + key);
   if (!grid) return;
+
+  // Clean up any existing slideshow intervals in this grid to prevent memory leaks
+  grid.querySelectorAll('.pv2-slideshow-track').forEach(function(track) {
+    if (track._slideshowInterval) {
+      clearInterval(track._slideshowInterval);
+      delete track._slideshowInterval;
+    }
+  });
+
   const start = s.page * PER_PAGE;
   const slice = s.list.slice(start, start + PER_PAGE);
   grid.innerHTML = slice.map(buildImgCard).join('');
@@ -151,9 +159,12 @@ function renderCatPage(key) {
     card.addEventListener('click', function() { openModal(parseInt(card.dataset.id)); });
     card.addEventListener('keydown', function(e) { if (e.key === 'Enter') openModal(parseInt(card.dataset.id)); });
   });
+
+  // Re-run slideshow initialization
+  initCardSlideshows();
 }
 
-/* â”€â”€ Category nav â”€â”€ */
+/* ── Category nav ── */
 function setupCatNav() {
   document.querySelectorAll('.pv2-prev-btn').forEach(function(btn) {
     btn.addEventListener('click', function() {
@@ -312,6 +323,7 @@ function setFilter(filter) {
       showcaseRoot.style.display = 'none';
       showcaseRoot.innerHTML = '';
     }
+    initCardSlideshows();
   } else {
     if (featSec) featSec.style.display = 'none';
     if (projRoot) projRoot.style.display = 'none';
@@ -455,7 +467,37 @@ function handleQueryParams() {
   }
 }
 
-/* â”€â”€ INIT â”€â”€ */
+/* ── Card Slideshow Manager ── */
+function initCardSlideshows() {
+  const tracks = document.querySelectorAll('.pv2-slideshow-track');
+  tracks.forEach(function(track) {
+    // If there is already an active interval on this track, clear it first
+    if (track._slideshowInterval) {
+      clearInterval(track._slideshowInterval);
+      delete track._slideshowInterval;
+    }
+
+    const n = parseInt(track.style.getPropertyValue('--n') || '1');
+    if (n <= 1) return;
+
+    let activeIdx = 0;
+    
+    // Slide every 5 seconds (5000ms)
+    track._slideshowInterval = setInterval(function() {
+      // Pause if user is hovering over the card
+      const card = track.closest('.pv2-img-card');
+      if (card && card.matches(':hover')) {
+        return;
+      }
+
+      activeIdx = (activeIdx + 1) % n;
+      const shift = -(100 / n) * activeIdx;
+      track.style.transform = 'translateX(' + shift + '%)';
+    }, 5000);
+  });
+}
+
+/* ── INIT ── */
 (function() {
   renderFeatured();
 
