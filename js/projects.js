@@ -249,9 +249,29 @@ function openModal(id) {
   const modal = document.getElementById('project-modal');
   const body  = document.getElementById('pv2-modal-body');
 
-  const imgHTML = p.image
-    ? '<div class="pv2-modal-img"><img src="' + p.image + '" alt="' + p.name + '" width="800" height="500"></div>'
-    : '<div class="pv2-modal-img"><div class="pv2-modal-img-ph"></div></div>';
+  let imgHTML = '';
+  if (p.images && p.images.length > 1) {
+    imgHTML = [
+      '<div class="pv2-modal-img-slider">',
+        '<div class="pv2-modal-img-track" style="--n: ' + p.images.length + '; transform: translateX(0%);">',
+          p.images.map(function(imgSrc) {
+            return '<div class="pv2-modal-slide"><img src="' + imgSrc + '" alt="' + p.name + '" width="800" height="500"></div>';
+          }).join(''),
+        '</div>',
+        '<button class="pv2-modal-slider-btn pv2-modal-slider-prev" aria-label="Previous image">&#8592;</button>',
+        '<button class="pv2-modal-slider-btn pv2-modal-slider-next" aria-label="Next image">&#8594;</button>',
+        '<div class="pv2-modal-slider-dots">',
+          p.images.map(function(_, idx) {
+            return '<span class="pv2-modal-dot' + (idx === 0 ? ' active' : '') + '" data-idx="' + idx + '"></span>';
+          }).join(''),
+        '</div>',
+      '</div>'
+    ].join('');
+  } else if (p.image) {
+    imgHTML = '<div class="pv2-modal-img"><img src="' + p.image + '" alt="' + p.name + '" width="800" height="500"></div>';
+  } else {
+    imgHTML = '<div class="pv2-modal-img"><div class="pv2-modal-img-ph"></div></div>';
+  }
 
   body.innerHTML = [
     imgHTML,
@@ -267,6 +287,47 @@ function openModal(id) {
       '<div class="pv2-modal-field"><h4>What Was Delivered</h4><p>' + p.delivered + '</p></div>',
     '</div>'
   ].join('');
+
+  // Setup modal slider navigation if there is a slider track
+  const track = body.querySelector('.pv2-modal-img-track');
+  if (track) {
+    const prevBtn = body.querySelector('.pv2-modal-slider-prev');
+    const nextBtn = body.querySelector('.pv2-modal-slider-next');
+    const dots = body.querySelectorAll('.pv2-modal-dot');
+    const n = p.images.length;
+    let idx = 0;
+
+    function updateSlider(newIdx) {
+      idx = (newIdx + n) % n;
+      track.style.transform = 'translateX(' + (-100 / n * idx) + '%)';
+      dots.forEach(function(dot, dIdx) {
+        if (dIdx === idx) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function() {
+        updateSlider(idx - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function() {
+        updateSlider(idx + 1);
+      });
+    }
+
+    dots.forEach(function(dot) {
+      dot.addEventListener('click', function() {
+        const dotIdx = parseInt(dot.dataset.idx);
+        updateSlider(dotIdx);
+      });
+    });
+  }
 
   modal.classList.add('is-open');
   modal.setAttribute('aria-hidden','false');
