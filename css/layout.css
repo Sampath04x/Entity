@@ -1484,6 +1484,22 @@ line-height:1.2;
 
 }
 
+.project-content h3 a{
+
+color:inherit;
+
+text-decoration:none;
+
+transition:color 0.3s ease;
+
+}
+
+.project-content h3 a:hover{
+
+color:#0D3B8C;
+
+}
+
 .project-content p{
 
 line-height:2;
