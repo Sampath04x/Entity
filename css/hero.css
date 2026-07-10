@@ -226,7 +226,8 @@ Premium Architectural Hero Styles
     stroke: #94A3B8;
 }
 
-.stat-text h3 {
+.stat-text h3,
+.stat-text .stat-num {
     font-size: 1.7rem;
     font-weight: 800;
     color: #ffffff;

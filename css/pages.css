@@ -2006,7 +2006,7 @@ CONTACT HERO
     transform: scale(1.05);
 }
 
-.contact-info-card .card-content h3 {
+.contact-info-card .card-content h2 {
     font-family: var(--font-display, 'Space Grotesk', sans-serif);
     font-size: 0.8rem;
     font-weight: 600;
