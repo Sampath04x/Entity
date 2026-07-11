@@ -345,6 +345,12 @@ RESPONSIVE STYLING FOR HERO
         padding: 120px 24px 60px;
     }
     
+    .hero-title {
+        font-size: 2.1rem;
+        line-height: 1.15;
+        letter-spacing: -1px;
+    }
+    
     .hero-right {
         height: 380px;
     }

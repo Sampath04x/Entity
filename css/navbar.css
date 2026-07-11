@@ -380,6 +380,15 @@ display:none;
 
 }
 
+.nav-wrapper > nav {
+    transform: none !important;
+    animation: none !important;
+}
+
+#navbar.mobile-open.has-dark-hero .nav-links a {
+    color: #071c3d !important;
+}
+
 }
 
 
