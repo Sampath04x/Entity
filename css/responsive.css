@@ -153,27 +153,11 @@ Responsive
 
 @media (max-width:992px) {
 
-    .nav-links {
-
-        display: none;
-
-    }
-
-    .menu-toggle {
-
-        display: block;
-
-    }
+    /* Nav styles are handled in navbar.css */
 
     .hero {
 
         padding-top: 140px;
-
-    }
-
-    .hero-title {
-
-        font-size: 85%;
 
     }
 
@@ -265,14 +249,6 @@ Responsive
         padding-top: 120px;
 
         padding-bottom: 80px;
-
-    }
-
-    .hero-title {
-
-        font-size: 72%;
-
-        line-height: 1;
 
     }
 
@@ -382,12 +358,6 @@ Responsive
 ==============================*/
 
 @media (max-width:576px) {
-
-    .hero-title {
-
-        font-size: 62%;
-
-    }
 
     .hero-label {
 
