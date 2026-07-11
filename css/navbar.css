@@ -79,7 +79,7 @@ Logo
 
 .logo img{
 
-    height:48px;
+    height:36px;
 
     width:auto;
 
@@ -89,13 +89,13 @@ Logo
 
 #navbar.scrolled .logo img{
 
-    height:40px;
+    height:30px;
 
 }
 
 .logo-text{
 
-    font-size:1.3rem;
+    font-size:1.15rem;
 
     font-weight:800;
 
@@ -119,7 +119,7 @@ Logo
 
 #navbar.scrolled .logo-text{
 
-    font-size:1.2rem;
+    font-size:1.05rem;
 
 }
 

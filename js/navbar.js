@@ -7,13 +7,13 @@ async function initNavbar() {
     if (!navbarContainer) return;
 
     try {
-        const response = await fetch("components/navbar.html");
+        const response = await fetch("/components/navbar.html");
         if (!response.ok) throw new Error("Failed to load navbar component");
         
         navbarContainer.innerHTML = await response.text();
 
         // Check if page has a dark hero header
-        if (document.querySelector(".page-hero") || document.querySelector(".about-hero") || document.querySelector(".contact-hero")) {
+        if (document.querySelector(".page-hero") || document.querySelector(".about-hero")) {
             navbarContainer.classList.add("has-dark-hero");
         }
 

@@ -556,7 +556,7 @@ async function loadFooter() {
 
     try {
 
-        const response = await fetch("components/footer.html");
+        const response = await fetch("/components/footer.html");
 
         footer.innerHTML = await response.text();
 
