@@ -1,5 +1,5 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://entityenterprises.in/sitemap.xml
-Sitemap: https://entityenterprises.in/image-sitemap.xml
+Sitemap: https://www.entityenterprises.com/sitemap.xml
+Sitemap: https://www.entityenterprises.com/image-sitemap.xml
