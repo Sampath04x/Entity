@@ -24,7 +24,7 @@
     <link rel="canonical" href="https://www.entityenterprises.com/about">
     
     <!-- Preloads -->
-    <link rel="preload" href="assets/logo/logo.webp" as="image" type="image/webp">
+    <link rel="preload" href="/assets/logo/logo.webp" as="image" type="image/webp">
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -60,6 +60,7 @@
     <link rel="stylesheet" href="/css/navbar.css?v=3">
     <link rel="stylesheet" href="/css/pages.css?v=3">
     <link rel="stylesheet" href="/css/animations.css?v=3">
+    <link rel="stylesheet" href="/css/legacy.css?v=99">
     <link rel="stylesheet" href="/css/responsive.css?v=3">
     
     <!-- Structured Data -->
@@ -143,7 +144,7 @@ ABOUT HERO
             </div>
             <div class="about-hero-right">
                 <div class="about-hero-image">
-                    <img src="assets/projects/optimized/all-india-ayurvedic-congress-building.webp" alt="All India Ayurvedic Congress Building by Entity Enterprises" width="800" height="600" loading="eager" fetchpriority="high">
+                    <img src="/assets/projects/optimized/all-india-ayurvedic-congress-building.webp" alt="All India Ayurvedic Congress Building by Entity Enterprises" width="800" height="600" loading="eager" fetchpriority="high">
                 </div>
             </div>
         </div>
@@ -210,163 +211,380 @@ WHO WE ARE
 </section>
 
 <!-- ======================================================
-LEADERSHIP
+OUR LEGACY
 ====================================================== -->
-<section class="about-leadership">
+<section id="legacy-section" class="about-legacy">
+    <div class="legacy-bg-grid" aria-hidden="true"></div>
     <div class="container">
-        <div class="leadership-header">
-            <div class="lh-left">
-                <span class="section-tag">LEADERSHIP</span>
-                <h2 class="section-title">Driven by Experience.<br>Guided by Vision.</h2>
-            </div>
-            <div class="lh-right">
-                <div class="quote-box">
-                    <svg class="quote-icon" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" opacity="0.15"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                    <p>Strong leadership and clarity of vision drive every successful project.</p>
-                </div>
-            </div>
+
+        <!-- Header -->
+        <div class="legacy-header">
+            <span class="section-tag">OUR LEGACY</span>
+            <h2 class="legacy-main-title">
+                Built on Legacy.<br>
+                <em>Driven by Generations.</em>
+            </h2>
+            <p class="legacy-subtitle">
+                From humble beginnings in the 1960s to established excellence today, our journey is rooted in hard work, knowledge and a commitment to quality that spans four generations.
+            </p>
         </div>
-        
-        <div class="leadership-cards">
-            <!-- Sandeep Malhotra Card -->
-            <div class="leader-row-card">
-                <div class="leader-left-block">
-                    <div class="leader-img-wrapper">
-                        <img src="assets/team/saandeep-malhotra.jpg" alt="Sandeep Malhotra" width="400" height="450" loading="lazy">
-                    </div>
-                    <!-- Stats Strip -->
-                    <div class="leader-stats-strip">
-                        <div class="leader-stat-item">
-                            <div class="stat-circle">23+</div>
-                            <div class="stat-label">Years of Experience</div>
-                        </div>
-                        <div class="leader-stat-item">
-                            <div class="stat-icon-wrapper">
-                                <span class="stat-top-val">5 Years</span>
-                                <svg class="stat-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+
+        <div class="legacy-grid-layout">
+            <!-- Left Column: Legacy Tree -->
+            <div class="legacy-left-column">
+                <!-- ── Legacy Tree ── -->
+                <div class="legacy-tree" id="legacy-tree">
+
+                    <!-- GENERATION 1: B.R. Malhotra -->
+                    <div class="legacy-gen legacy-gen-1" data-gen="1">
+                        <div class="legacy-era-watermark" aria-hidden="true">1960s</div>
+                        <div class="legacy-gen-inner">
+                            <article class="legacy-card legacy-card-gen1" data-card="1">
+                                <div class="legacy-card-inner">
+                                    <div class="legacy-portrait-wrap">
+                                        <img src="/assets/team/BR MALHOTRA.jpeg"
+                                             alt="Late Shree B.R. Malhotra, Founder"
+                                             width="140" height="220" loading="lazy">
+                                    </div>
+                                    <div class="legacy-card-body">
+                                        <div class="legacy-card-cols">
+                                            <div class="legacy-col legacy-col-info">
+                                                <span class="legacy-card-subtitle">Late Shree</span>
+                                                <h3 class="legacy-person-name">B.R. Malhotra</h3>
+                                                <span class="legacy-person-role">Founder – Kumar Electricals</span>
+                                                <div class="legacy-meta-row">
+                                                    <span class="meta-icon">🏛️</span> Since the 1960s
+                                                </div>
+                                                <p class="legacy-bio">Established the foundation of Kumar Electricals with values of integrity, craftsmanship and quality.</p>
+                                            </div>
+                                            
+                                            <div class="legacy-col legacy-col-contribution">
+                                                <span class="legacy-col-label">Contribution</span>
+                                                <p class="legacy-contribution-text">Laid the strong foundation and core values that continue to guide our legacy and every decision we make.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <div class="legacy-node-wrapper">
+                                <div class="legacy-node" data-node="1">
+                                    <div class="node-pulse-ring"></div>
+                                    <div class="node-core">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="stat-label">International Experience</div>
-                        </div>
-                        <div class="leader-stat-item">
-                            <div class="stat-icon-wrapper">
-                                <span class="stat-top-val">Turnkey</span>
-                                <svg class="stat-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                            </div>
-                            <div class="stat-label">Project Leadership</div>
                         </div>
                     </div>
-                </div>
-                <div class="leader-details">
-                    <span class="leader-label">Leadership</span>
-                    <h3>Sandeep Malhotra</h3>
-                    <span class="leader-title">Founder | Project Director</span>
-                    <p class="leader-intro">
-                        With over 23 years of experience in turnkey construction,
-                        corporate interiors and project management, Sandeep has led
-                        complex projects across India with a strong focus on quality,
-                        timelines and client satisfaction.
-                    </p>
-                    <p class="leader-description">
-                        His leadership combines strategic planning, disciplined execution
-                        and international exposure from Abu Dhabi, enabling Entity
-                        Enterprises to successfully deliver large-scale, multi-disciplinary
-                        projects while maintaining the highest standards of safety,
-                        coordination and operational excellence.
-                    </p>
-                    <div class="leader-signature">Sandeep Malhotra</div>
+
+                    <!-- Connector Gen1 → Gen2 -->
+                    <div class="legacy-connector" data-connector="1-2" aria-hidden="true">
+                        <svg class="legacy-path-svg" viewBox="0 0 4 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="legacy-path" d="M 2 0 L 2 70"/>
+                            <circle class="path-glow-dot" cx="2" cy="0" r="4"/>
+                        </svg>
+                    </div>
+
+                    <!-- GENERATION 2: B.K. Malhotra -->
+                    <div class="legacy-gen legacy-gen-2" data-gen="2">
+                        <div class="legacy-era-watermark" aria-hidden="true">1980s</div>
+                        <div class="legacy-gen-inner">
+                            <article class="legacy-card legacy-card-gen2" data-card="2">
+                                <div class="legacy-card-inner">
+                                    <div class="legacy-portrait-wrap portrait-fallback" data-initials="BKM"></div>
+                                    <div class="legacy-card-body">
+                                        <div class="legacy-card-cols">
+                                            <div class="legacy-col legacy-col-info">
+                                                <h3 class="legacy-person-name">B.K. Malhotra</h3>
+                                                <span class="legacy-person-role legacy-role-gold">Second Generation Leadership – Kumar Electricals</span>
+                                                <div class="legacy-meta-row">
+                                                    <span class="meta-icon">🏢</span> Since the 1980s
+                                                </div>
+                                                <p class="legacy-bio">Expanded the family legacy into professional electrical contracting and delivered excellence across sectors.</p>
+                                            </div>
+                                            <div class="legacy-col legacy-col-kumar">
+                                                <span class="legacy-col-label">Kumar Electricals</span>
+                                                <div class="kumar-services-grid">
+                                                    <div class="kumar-service-item">
+                                                        <div class="kumar-icon">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                                        </div>
+                                                        <span class="kumar-title">Residential</span>
+                                                    </div>
+                                                    <div class="kumar-service-item">
+                                                        <div class="kumar-icon">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M16 14h.01"/></svg>
+                                                        </div>
+                                                        <span class="kumar-title">Commercial</span>
+                                                    </div>
+                                                    <div class="kumar-service-item">
+                                                        <div class="kumar-icon">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 22H2M17 18V9h-5v5H7v-4H2v8h15z"/><path d="M14 9l-4-4v4m7 0V5l-4-2v4"/></svg>
+                                                        </div>
+                                                        <span class="kumar-title">Industrial</span>
+                                                    </div>
+                                                    <div class="kumar-service-item">
+                                                        <div class="kumar-icon">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 22h16L12 2zm-4 13h8m-6-5h4M12 2v20"/></svg>
+                                                        </div>
+                                                        <span class="kumar-title">Infrastructure</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <div class="legacy-node-wrapper">
+                                <div class="legacy-node" data-node="2">
+                                    <div class="node-pulse-ring"></div>
+                                    <div class="node-core">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Branch Connector Gen2 → Gen3 -->
+                    <div class="legacy-branch-connector" data-connector="branch" aria-hidden="true">
+                        <svg class="legacy-branch-svg" viewBox="0 0 800 160" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="legacy-path legacy-path-stem" d="M 400 0 L 400 115"/>
+                            <path class="legacy-path" data-branch="left"  d="M 400 115 Q 200 115 200 160"/>
+                            <path class="legacy-path" data-branch="right" d="M 400 115 Q 600 115 600 160"/>
+                            <circle class="path-glow-dot" cx="400" cy="0" r="5"/>
+                        </svg>
+                    </div>
+
+                    <!-- GENERATION 3: Sandeep + Balbir -->
+                    <div class="legacy-gen legacy-gen-3" data-gen="3">
+                        <div class="legacy-era-watermark legacy-era-present" aria-hidden="true">Present</div>
+                        <div class="legacy-gen-3-cols">
+
+                            <!-- Left: Sandeep -->
+                            <div class="legacy-branch-side legacy-branch-left">
+                                <div class="legacy-node-wrapper">
+                                    <div class="legacy-node" data-node="3">
+                                        <div class="node-pulse-ring"></div>
+                                        <div class="node-core">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <article class="legacy-card legacy-card-gen3" data-card="3">
+                                    <div class="legacy-card-inner">
+                                        <div class="legacy-card-top">
+                                            <div class="legacy-portrait-wrap">
+                                                <img src="/assets/team/saandeep-malhotra.jpg"
+                                                     alt="Sandeep Malhotra, Founder of Entity Enterprises"
+                                                     width="130" height="170" loading="lazy">
+                                            </div>
+                                            <div class="legacy-card-body-row">
+                                                <div class="legacy-card-info">
+                                                    <h3 class="legacy-person-name">Sandeep Malhotra</h3>
+                                                    <span class="legacy-person-role legacy-role-gold">Founder – Entity Enterprises</span>
+                                                    <p class="legacy-bio">Focused on turnkey construction, interiors and infrastructure delivery with precision and trust.</p>
+                                                </div>
+                                                <div class="legacy-company-expertise">
+                                                    <span class="legacy-col-label">Entity Enterprises</span>
+                                                    <ul class="expertise-list">
+                                                        <li>
+                                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"/><path d="M18 8h4M18 12h4M22 6v12"/></svg>
+                                                            Commercial Construction
+                                                        </li>
+                                                        <li>
+                                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-9h8v9M4 22V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 18h.01M12 14h.01M8 18h.01M8 14h.01M8 10h.01M8 6h.01M14 6h.01"/></svg>
+                                                            Turnkey Interiors
+                                                        </li>
+                                                        <li>
+                                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 22H2M10 22V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v17M18 22H4V11a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v11"/></svg>
+                                                            Industrial Projects
+                                                        </li>
+                                                        <li>
+                                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 22H2M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18M10 6h4M10 10h4M10 14h4"/></svg>
+                                                            Institutional Buildings
+                                                        </li>
+                                                        <li>
+                                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18M6 6v12M18 6v12"/></svg>
+                                                            Infrastructure Solutions
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="legacy-card-bottom">
+                                            <span class="legacy-col-label">Qualifications</span>
+                                            <div class="legacy-qualifications-row">
+                                                <div class="qual-item"><span class="qual-icon">🎓</span> Graduation, Shri Aurobindo College, DU</div>
+                                                <div class="qual-item"><span class="qual-icon">📐</span> Diploma – Electrical Engg., Pusa Poly.</div>
+                                                <div class="qual-item"><span class="qual-icon">💻</span> E-Com, Maharishi Institute of Tech.</div>
+                                                <div class="qual-item"><span class="qual-icon">🌍</span> Control Circuit Engineering, Abu Dhabi</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+
+                            <!-- Right: Balbir -->
+                            <div class="legacy-branch-side legacy-branch-right">
+                                <div class="legacy-node-wrapper">
+                                    <div class="legacy-node" data-node="4">
+                                        <div class="node-pulse-ring"></div>
+                                        <div class="node-core">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <article class="legacy-card legacy-card-gen3" data-card="4">
+                                    <div class="legacy-card-inner">
+                                        <div class="legacy-card-top">
+                                            <div class="legacy-portrait-wrap">
+                                                <img src="/assets/team/balbir-malhotra.jpg"
+                                                     alt="Balbir Malhotra, Founder of Dezine Partners"
+                                                     width="130" height="170" loading="lazy">
+                                            </div>
+                                            <div class="legacy-card-body-row">
+                                                <div class="legacy-card-info">
+                                                    <h3 class="legacy-person-name">Balbir Malhotra</h3>
+                                                    <span class="legacy-person-role">Founder – Dezine Partners</span>
+                                                    <p class="legacy-bio">Dedicated to architectural excellence and innovative design solutions.</p>
+                                                </div>
+                                                <div class="legacy-company-expertise">
+                                                    <span class="legacy-col-label">Dezine Partners</span>
+                                                    <ul class="expertise-list">
+                                                        <li>
+                                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 22 1-1h3l9-9-3-3-9 9v3l-1 1"/><path d="M14 6l3 3"/></svg>
+                                                            Architecture
+                                                        </li>
+                                                        <li>
+                                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M12 11v4"/></svg>
+                                                            Interior Design
+                                                        </li>
+                                                        <li>
+                                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                                                            Planning
+                                                        </li>
+                                                        <li>
+                                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                                            Design Excellence
+                                                        </li>
+                                                        <li>
+                                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                                                            Project Management
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="legacy-card-bottom">
+                                            <span class="legacy-col-label">Qualifications</span>
+                                            <div class="legacy-qualifications-row">
+                                                <div class="qual-item"><span class="qual-icon">🎓</span> B.Arch., U.P. Technical University</div>
+                                                <div class="qual-item"><span class="qual-icon">📐</span> Post Graduation in Project Management from NICMAR</div>
+                                                <div class="qual-item"><span class="qual-icon">🌍</span> One Year Architectural Experience in England</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /legacy-tree -->
+
+                <!-- Closing Caption -->
+                <div class="legacy-closing-caption" data-final-caption style="margin-top: 40px;">
+                    <div class="legacy-caption-inner">
+                        <div class="legacy-caption-line"></div>
+                        <p>Building on a legacy of craftsmanship, design excellence, and construction expertise across generations.</p>
+                        <div class="legacy-caption-line"></div>
+                    </div>
                 </div>
             </div>
-            
-            <!-- Balbir Malhotra Card -->
-            <div class="leader-row-card">
-                <div class="leader-left-block">
-                    <div class="leader-img-wrapper">
-                        <img src="assets/team/balbir-malhotra.jpg" alt="Balbir Malhotra" width="400" height="450" loading="lazy">
+
+            <!-- Right Column: Company Evolution Panel -->
+            <div class="legacy-right-column">
+                <aside class="company-evolution-panel">
+                    <div class="evolution-header">
+                        <h3>COMPANY EVOLUTION</h3>
                     </div>
-                    <!-- Stats Strip -->
-                    <div class="leader-stats-strip">
-                        <div class="leader-stat-item">
-                            <div class="stat-circle">18+</div>
-                            <div class="stat-label">Years of Experience</div>
-                        </div>
-                        <div class="leader-stat-item">
-                            <div class="stat-icon-wrapper">
-                                <span class="stat-top-val">Design &amp;</span>
-                                <svg class="stat-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                    <div class="evolution-body">
+                        <div class="evolution-timeline">
+                            <div class="evolution-line"></div>
+                            
+                            <div class="evolution-item">
+                                <div class="evolution-node">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16M10 14h4M4 18h16M6 14v4M18 14v4M12 14v4M3 10l9-7 9 7z"/></svg>
+                                </div>
+                                <div class="evolution-content">
+                                    <span class="evolution-year">1960s</span>
+                                    <h4 class="evolution-company">Kumar Electricals</h4>
+                                    <p class="evolution-desc">Founded as an electrical and electronics venture, establishing the core family business.</p>
+                                </div>
                             </div>
-                            <div class="stat-label">Technical Excellence</div>
-                        </div>
-                        <div class="leader-stat-item">
-                            <div class="stat-icon-wrapper">
-                                <span class="stat-top-val">Execution</span>
-                                <svg class="stat-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="22" x2="9" y2="16"></line><line x1="15" y1="22" x2="15" y2="16"></line><line x1="9" y1="16" x2="15" y2="16"></line><path d="M9 6h6"></path><path d="M9 10h6"></path></svg>
+                            
+                            <div class="evolution-item">
+                                <div class="evolution-node">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="22" x2="9" y2="16"/><line x1="15" y1="22" x2="15" y2="16"/><line x1="9" y1="16" x2="15" y2="16"/><path d="M9 6h6M9 10h6M9 14h6"/></svg>
+                                </div>
+                                <div class="evolution-content">
+                                    <span class="evolution-year">1980s</span>
+                                    <h4 class="evolution-company">Kumar Electricals</h4>
+                                    <p class="evolution-desc">Second generation expansion into large-scale electrical contracting, construction, and infrastructure projects.</p>
+                                </div>
                             </div>
-                            <div class="stat-label">Focused Design</div>
+                            
+                            <div class="evolution-item">
+                                <div class="evolution-node">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M12 8L6 21"/><path d="M12 8l6 13"/><path d="M9 15h6"/></svg>
+                                </div>
+                                <div class="evolution-content">
+                                    <span class="evolution-year">2012</span>
+                                    <h4 class="evolution-company">Dezine Partners</h4>
+                                    <p class="evolution-desc">Specializing in architecture, interior design, planning and execution.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="evolution-item">
+                                <div class="evolution-node">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 9h6M9 13h6M9 17h6"/></svg>
+                                </div>
+                                <div class="evolution-content">
+                                    <span class="evolution-year">2017</span>
+                                    <h4 class="evolution-company">Entity Enterprises</h4>
+                                    <p class="evolution-desc">Delivering turnkey construction, commercial interiors and infrastructure solutions.</p>
+                                </div>
+                            </div>
                         </div>
+                        <div class="evolution-bg-sketch"></div>
                     </div>
-                </div>
-                <div class="leader-details">
-                    <span class="leader-label">Leadership</span>
-                    <h3>Balbir Malhotra</h3>
-                    <span class="leader-title">Head of Design | Technical Excellence</span>
-                    <p class="leader-intro">
-                        Bringing over 18 years of experience in architectural design,
-                        turnkey interiors and construction detailing across commercial,
-                        institutional and industrial environments.
-                    </p>
-                    <p class="leader-description">
-                        Balbir leads the firm's design vision by combining creative thinking
-                        with technical precision. Every project is developed with a strong
-                        focus on functionality, execution feasibility, material intelligence
-                        and long-term performance—ensuring spaces that are elegant, efficient
-                        and built to last.
-                    </p>
-                    <div class="leader-signature">Balbir Malhotra</div>
-                </div>
+                </aside>
             </div>
         </div>
 
-        <!-- Leadership Bottom Values Bar -->
+        <!-- Bottom Values Bar (preserved) -->
         <div class="leadership-bottom-values">
             <div class="value-item">
-                <div class="value-icon-circle">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
-                </div>
-                <div class="value-text">
-                    <h4>Our Commitment</h4>
-                    <p>Quality, safety and transparency at every step.</p>
-                </div>
+                <div class="value-icon-circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div>
+                <div class="value-text"><h4>Our Commitment</h4><p>Quality, safety and transparency at every step.</p></div>
             </div>
             <div class="value-item">
-                <div class="value-icon-circle">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                </div>
-                <div class="value-text">
-                    <h4>Our Strength</h4>
-                    <p>Experienced team, proven systems and client-first approach.</p>
-                </div>
+                <div class="value-icon-circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+                <div class="value-text"><h4>Our Strength</h4><p>Experienced team, proven systems and client-first approach.</p></div>
             </div>
             <div class="value-item">
-                <div class="value-icon-circle">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                </div>
-                <div class="value-text">
-                    <h4>Our Promise</h4>
-                    <p>Delivering spaces that perform, today and for years to come.</p>
-                </div>
+                <div class="value-icon-circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+                <div class="value-text"><h4>Our Promise</h4><p>Delivering spaces that perform, today and for years to come.</p></div>
             </div>
             <div class="value-item">
-                <div class="value-icon-circle">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="22" x2="9" y2="16"></line><line x1="15" y1="22" x2="15" y2="16"></line><line x1="9" y1="16" x2="15" y2="16"></line><path d="M9 6h6"></path><path d="M9 10h6"></path></svg>
-                </div>
-                <div class="value-text">
-                    <h4>Our Vision</h4>
-                    <p>To be India's most trusted partner for building better futures.</p>
-                </div>
+                <div class="value-icon-circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="22" x2="9" y2="16"></line><line x1="15" y1="22" x2="15" y2="16"></line><line x1="9" y1="16" x2="15" y2="16"></line><path d="M9 6h6"></path><path d="M9 10h6"></path></svg></div>
+                <div class="value-text"><h4>Our Vision</h4><p>To be India's most trusted partner for building better futures.</p></div>
             </div>
         </div>
-    </div>
+
+    </div><!-- /container -->
 </section>
+
 
 <!-- ======================================================
 OUR DELIVERY PROCESS
@@ -388,7 +606,7 @@ OUR DELIVERY PROCESS
                 </p>
             </div>
             <div class="process-header-right">
-                <img src="assets/about/delivery_process_blueprint.png" alt="Architectural building wireframe sketch" class="process-blueprint-img" width="460" height="280" loading="lazy">
+                <img src="/assets/about/delivery_process_blueprint.png" alt="Architectural building wireframe sketch" class="process-blueprint-img" width="460" height="280" loading="lazy">
             </div>
         </div>
 
@@ -578,7 +796,7 @@ WHAT WE DO
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-image">
-                    <img src="assets/projects/Ritu-KIA/entity-enterprises-ritu-kia.webp" alt="Design & Build" width="400" height="300" loading="lazy">
+                    <img src="/assets/projects/Ritu-KIA/entity-enterprises-ritu-kia.webp" alt="Design & Build" width="400" height="300" loading="lazy">
                     <div class="service-overlay">
                         <div class="service-icon-circle">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
@@ -590,7 +808,7 @@ WHAT WE DO
             
             <div class="service-card">
                 <div class="service-image">
-                    <img src="assets/projects/3M/entity-enterprises-3m.webp" alt="General Contracting (Interior + MEP)" width="400" height="300" loading="lazy">
+                    <img src="/assets/projects/3M/entity-enterprises-3m.webp" alt="General Contracting (Interior + MEP)" width="400" height="300" loading="lazy">
                     <div class="service-overlay">
                         <div class="service-icon-circle">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/><path d="M15 3v18"/><path d="M3 9h18"/><path d="M3 15h18"/></svg>
@@ -602,7 +820,7 @@ WHAT WE DO
             
             <div class="service-card">
                 <div class="service-image">
-                    <img src="assets/projects/NCISM/entity-enterprises-ncism_1.JPG" alt="Factory for Joinery Work" width="400" height="300" loading="lazy">
+                    <img src="/assets/projects/NCISM/entity-enterprises-ncism_1.JPG" alt="Factory for Joinery Work" width="400" height="300" loading="lazy">
                     <div class="service-overlay">
                         <div class="service-icon-circle">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
@@ -614,7 +832,7 @@ WHAT WE DO
             
             <div class="service-card">
                 <div class="service-image">
-                    <img src="assets/projects/VI-John/VI-JOHN_Entity_enterprises_1.jpg" alt="Deal in Modular Furniture, Chairs, Carpet & Lounge Furniture" width="400" height="300" loading="lazy">
+                    <img src="/assets/projects/VI-John/VI-JOHN_Entity_enterprises_1.jpg" alt="Deal in Modular Furniture, Chairs, Carpet & Lounge Furniture" width="400" height="300" loading="lazy">
                     <div class="service-overlay">
                         <div class="service-icon-circle">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18v3M20 18v3M19 8v10M5 8v10M12 4v14M8 12h8"/></svg>
@@ -626,7 +844,7 @@ WHAT WE DO
             
             <div class="service-card">
                 <div class="service-image">
-                    <img src="assets/projects/Honda-Agra/entity-enterprises-honda-agra-02.webp" alt="Refurbishment & Relocation Works" width="400" height="300" loading="lazy">
+                    <img src="/assets/projects/Honda-Agra/entity-enterprises-honda-agra-02.webp" alt="Refurbishment & Relocation Works" width="400" height="300" loading="lazy">
                     <div class="service-overlay">
                         <div class="service-icon-circle">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
@@ -638,7 +856,7 @@ WHAT WE DO
             
             <div class="service-card">
                 <div class="service-image">
-                    <img src="assets/projects/NCISM/entity-enterprises-ncism_8.JPG" alt="Audio Visual, Lighting & Acoustics Works" width="400" height="300" loading="lazy">
+                    <img src="/assets/projects/NCISM/entity-enterprises-ncism_8.JPG" alt="Audio Visual, Lighting & Acoustics Works" width="400" height="300" loading="lazy">
                     <div class="service-overlay">
                         <div class="service-icon-circle">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5v14M22 9v6M7 8v8M2 10v4"/></svg>
@@ -659,18 +877,18 @@ TRUSTED BY LEADING BRANDS
         <span class="section-tag center">TRUSTED BY LEADING BRANDS</span>
         <div class="client-marquee">
             <div class="client-track">
-                <img src="assets/clients/honda-2.webp" alt="Honda" loading="lazy" decoding="async" width="120" height="50">
-                <img src="assets/clients/3m-science-applied-to-life.webp" alt="3M" loading="lazy" decoding="async" width="120" height="50">
-                <img src="assets/clients/entity-enterprises-kia.webp" alt="Kia" loading="lazy" decoding="async" width="120" height="50">
-                <img src="assets/clients/entity-enterprises-ather.webp" alt="Ather" loading="lazy" decoding="async" width="120" height="50">
-                <img src="assets/clients/entity-enterprises-renault.webp" alt="Renault" loading="lazy" decoding="async" width="120" height="50">
-                <img src="assets/clients/entity-enterprises-vi-john.webp" alt="VI John" loading="lazy" decoding="async" width="120" height="50">
-                <img src="assets/clients/entity-enterprises-pepsico.webp" alt="PepsiCo" loading="lazy" decoding="async" width="120" height="50">
-                <img src="assets/clients/entity-enterprises-tvs.webp" alt="TVS" loading="lazy" decoding="async" width="120" height="50">
-                <img src="assets/clients/entity-enterprises-bonn.webp" alt="Bonn" loading="lazy" decoding="async" width="120" height="50">
-                <img src="assets/projects/Kent RO Systems/kent-logo.png" alt="Kent RO" loading="lazy" decoding="async" width="120" height="50" style="object-fit: contain;">
-                <img src="assets/projects/Allied Blenders & Distillers/41.png" alt="Allied Blenders" loading="lazy" decoding="async" width="120" height="50" style="object-fit: contain;">
-                <img src="assets/projects/STERLING TOOLS LIMITED/STL Prithla/32.jpg" alt="Sterling Tools" loading="lazy" decoding="async" width="120" height="50" style="object-fit: contain;">
+                <img src="/assets/clients/honda-2.webp" alt="Honda" loading="lazy" decoding="async" width="120" height="50">
+                <img src="/assets/clients/3m-science-applied-to-life.webp" alt="3M" loading="lazy" decoding="async" width="120" height="50">
+                <img src="/assets/clients/entity-enterprises-kia.webp" alt="Kia" loading="lazy" decoding="async" width="120" height="50">
+                <img src="/assets/clients/entity-enterprises-ather.webp" alt="Ather" loading="lazy" decoding="async" width="120" height="50">
+                <img src="/assets/clients/entity-enterprises-renault.webp" alt="Renault" loading="lazy" decoding="async" width="120" height="50">
+                <img src="/assets/clients/entity-enterprises-vi-john.webp" alt="VI John" loading="lazy" decoding="async" width="120" height="50">
+                <img src="/assets/clients/entity-enterprises-pepsico.webp" alt="PepsiCo" loading="lazy" decoding="async" width="120" height="50">
+                <img src="/assets/clients/entity-enterprises-tvs.webp" alt="TVS" loading="lazy" decoding="async" width="120" height="50">
+                <img src="/assets/clients/entity-enterprises-bonn.webp" alt="Bonn" loading="lazy" decoding="async" width="120" height="50">
+                <img src="/assets/projects/Kent RO Systems/kent-logo.png" alt="Kent RO" loading="lazy" decoding="async" width="120" height="50" style="object-fit: contain;">
+                <img src="/assets/projects/Allied Blenders & Distillers/41.png" alt="Allied Blenders" loading="lazy" decoding="async" width="120" height="50" style="object-fit: contain;">
+                <img src="/assets/projects/STERLING TOOLS LIMITED/STL Prithla/32.jpg" alt="Sterling Tools" loading="lazy" decoding="async" width="120" height="50" style="object-fit: contain;">
             </div>
         </div>
     </div>
@@ -713,7 +931,7 @@ OUR VALUES
 <!-- ======================================================
 LET'S BUILD BANNER
 ====================================================== -->
-<section class="about-cta-banner" style="background-image: linear-gradient(rgba(7, 24, 46, 0.85), rgba(7, 24, 46, 0.85)), url('assets/about/cta-building.webp');">
+<section class="about-cta-banner" style="background-image: linear-gradient(rgba(7, 24, 46, 0.85), rgba(7, 24, 46, 0.85)), url('/assets/about/cta-building.webp');">
     <div class="container">
         <div class="cta-banner-content">
             <h2>Let's Build Something<br>Exceptional Together</h2>
@@ -731,6 +949,7 @@ LET'S BUILD BANNER
 <script src="/js/navbar.js?v=2"></script>
 <script src="/js/main.js"></script>
 <script src="/js/about.js"></script>
+<script src="/js/legacy.js"></script>
 <script src="/js/marquee.js"></script>
 <script src="/js/pageTransitions.js"></script>
 </body>

@@ -1,0 +1,1132 @@
+/*==========================================================
+LEGACY SECTION — Entity Enterprises
+Scroll-animated generational legacy tree
+==========================================================*/
+
+/* ─── Section ─── */
+.about-legacy {
+    position: relative;
+    padding: 120px 0 80px;
+    background: #07182E;
+    color: white;
+    overflow: hidden;
+}
+
+.legacy-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(200,162,97,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200,162,97,0.035) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    z-index: 1;
+    will-change: transform;
+}
+
+.about-legacy .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1560px;
+    width: min(95%, 1560px);
+}
+
+/* ─── Header ─── */
+.legacy-header {
+    max-width: 680px;
+    margin-bottom: 80px;
+}
+
+.legacy-header .section-tag { color: #60A5FA; }
+.legacy-header .section-tag::before { background: #60A5FA; }
+
+.legacy-main-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: white;
+    margin: 20px 0 22px;
+}
+
+.legacy-main-title em {
+    font-style: normal;
+    color: #C8A261;
+}
+
+.legacy-subtitle {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.6);
+    max-width: 520px;
+}
+
+/* ─── Tree container ─── */
+.legacy-tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 60px;
+}
+
+/* ─── Shared generation block ─── */
+.legacy-gen {
+    position: relative;
+    width: 100%;
+    max-width: 980px;
+}
+
+/* Era watermark */
+.legacy-era-watermark {
+    position: absolute;
+    right: -10px;
+    top: -20px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(5rem, 9vw, 8rem);
+    font-weight: 800;
+    color: rgba(200,162,97,0.055);
+    letter-spacing: -0.04em;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+}
+
+.legacy-era-present {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    right: 0;
+}
+
+.legacy-gen-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+/* ─── Connection nodes ─── */
+.legacy-node-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: -10px;
+    position: relative;
+    z-index: 3;
+}
+
+.legacy-node {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.node-core {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #07182E;
+    border: 2px solid #C8A261;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #C8A261;
+    position: relative;
+    z-index: 2;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.legacy-node.is-active .node-core {
+    border-color: #C8A261;
+    box-shadow: 0 0 0 3px rgba(200,162,97,0.15), 0 0 16px rgba(200,162,97,0.25);
+}
+
+.node-pulse-ring {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid rgba(200,162,97,0.5);
+    z-index: 1;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.legacy-node.is-active .node-pulse-ring {
+    animation: nodePulse 0.8s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+
+@keyframes nodePulse {
+    0%   { opacity: 0.8; transform: scale(0.8); }
+    100% { opacity: 0;   transform: scale(2.2); }
+}
+
+/* ─── Cards — state system ─── */
+.legacy-card {
+    width: 100%;
+    max-width: 800px;
+    background: rgba(13,35,70,0.55);
+    border: 1px solid rgba(200,162,97,0.12);
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    overflow: hidden;
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s cubic-bezier(0.16,1,0.3,1),
+        filter 0.6s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+/* Upcoming */
+.legacy-card[data-state="upcoming"] {
+    opacity: 0.18;
+    filter: blur(6px);
+    transform: translateY(12px) scale(0.97);
+    pointer-events: none;
+}
+
+/* Active */
+.legacy-card[data-state="active"] {
+    opacity: 1;
+    filter: none;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+/* Past */
+.legacy-card[data-state="past"] {
+    opacity: 0.65;
+    transform: scale(0.985);
+    pointer-events: auto;
+}
+
+/* Initial hidden (before JS kicks in) */
+.legacy-card {
+    opacity: 0;
+    transform: translateY(28px) scale(0.95);
+}
+
+/* Hover effects — only when active */
+.legacy-card[data-state="active"]:hover {
+    transform: translateY(-8px) scale(1);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    border-color: rgba(200,162,97,0.4);
+}
+
+.legacy-card[data-state="active"]:hover .legacy-portrait-wrap img {
+    transform: scale(1.025);
+}
+
+/* ─── Card layout ─── */
+.legacy-card-inner {
+    display: flex;
+    gap: 24px;
+    padding: 24px;
+    height: 100%;
+    align-items: flex-start;
+}
+
+.legacy-portrait-wrap {
+    width: 140px;
+    height: 185px;
+    flex-shrink: 0;
+    overflow: hidden;
+    background: rgba(7,24,46,0.8);
+    position: relative;
+    border: 2px solid rgba(200,162,97,0.3);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.legacy-portrait-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    filter: grayscale(15%) contrast(108%);
+    transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+
+/* Custom alignment to prevent head/face cropping */
+.legacy-portrait-wrap img[src*="saandeep-malhotra"] {
+    object-position: 28% 30%;
+}
+
+.legacy-portrait-wrap img[src*="balbir-malhotra"] {
+    object-position: 55% 55%;
+}
+
+/* Portrait fallback monogram */
+.legacy-portrait-wrap.portrait-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0D2346;
+    border: 2px solid rgba(200,162,97,0.3);
+    border-radius: 12px;
+}
+
+.legacy-portrait-wrap.portrait-fallback::after {
+    content: attr(data-initials);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #C8A261;
+}
+
+.legacy-card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Header row: name + company badge */
+.legacy-card-header-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.legacy-card-subtitle {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+}
+
+.legacy-person-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 4px;
+    line-height: 1.2;
+}
+
+.legacy-person-role {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.legacy-role-gold {
+    color: #C8A261 !important;
+}
+
+/* Company badge — blueprint tag style */
+.legacy-company-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    border: 1px solid rgba(200,162,97,0.35);
+    border-radius: 4px;
+    background: rgba(7,24,46,0.6);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.63rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #C8A261;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.legacy-badge-entity {
+    border-color: rgba(200,162,97,0.5);
+    color: #C8A261;
+}
+
+.legacy-badge-dezine {
+    border-color: rgba(96,165,250,0.4);
+    color: #60A5FA;
+}
+
+/* Info grid layout */
+.legacy-card-cols {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+}
+
+.legacy-card-gen1 .legacy-card-cols {
+    grid-template-columns: 1.2fr 1fr 1fr;
+}
+
+.legacy-card-gen2 .legacy-card-cols {
+    grid-template-columns: 1.2fr 1.8fr;
+}
+
+.legacy-col-label {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: rgba(200,162,97,0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(200,162,97,0.15);
+}
+
+.legacy-bio {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.6);
+    margin: 8px 0 0;
+}
+
+.legacy-contribution-text {
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.65);
+    margin: 0;
+}
+
+/* ─── Qualification badges ─── */
+.legacy-qual-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.qual-badge {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: rgba(255,255,255,0.7);
+    padding: 6px 9px;
+    background: rgba(13,35,70,0.5);
+    border: 1px solid rgba(200,162,97,0.1);
+    border-radius: 6px;
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+        opacity 0.45s ease var(--badge-delay, 0ms),
+        transform 0.45s ease var(--badge-delay, 0ms),
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.qual-badge.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.qual-badge:hover {
+    border-color: rgba(200,162,97,0.35);
+    box-shadow: 0 0 8px rgba(200,162,97,0.1);
+}
+
+.qual-badge:hover .qual-icon {
+    transform: rotate(8deg);
+    display: inline-block;
+}
+
+.qual-icon {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+/* Kumar Electricals services layout */
+.kumar-services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.kumar-service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: rgba(13,35,70,0.4);
+    border: 1px solid rgba(200,162,97,0.15);
+    border-radius: 8px;
+    padding: 12px 6px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.kumar-service-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(200,162,97,0.4);
+    background: rgba(13,35,70,0.6);
+}
+
+.kumar-icon {
+    color: #C8A261;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kumar-title {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    font-family: 'Space Grotesk', sans-serif;
+}
+    color: rgba(255,255,255,0.65);
+}
+
+/* ─── SVG path connectors ─── */
+.legacy-connector {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: -10px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.legacy-path-svg {
+    width: 4px;
+    height: 70px;
+    overflow: visible;
+}
+
+.legacy-branch-connector {
+    width: 100%;
+    max-width: 980px;
+    margin-top: -10px;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.legacy-branch-svg {
+    width: 100%;
+    height: 160px;
+    overflow: visible;
+}
+
+.legacy-path {
+    fill: none;
+    stroke: #C8A261;
+    stroke-width: 2;
+    stroke-linecap: round;
+    /* stroke-dasharray and stroke-dashoffset set by JS */
+    transition: stroke 0.6s ease;
+}
+
+/* Glow travelling dot */
+.path-glow-dot {
+    fill: #C8A261;
+    opacity: 0;
+    filter: drop-shadow(0 0 4px rgba(200,162,97,0.9));
+    transition: opacity 0.2s ease;
+}
+
+/* When tree illuminates at end */
+.legacy-tree.is-illuminated .legacy-path {
+    stroke: #E0B96A;
+    filter: drop-shadow(0 0 3px rgba(200,162,97,0.6));
+    transition: stroke 0.3s ease, filter 0.3s ease;
+}
+
+.legacy-tree.is-illuminated .node-core {
+    border-color: #E0B96A;
+    box-shadow: 0 0 0 4px rgba(200,162,97,0.2), 0 0 20px rgba(200,162,97,0.4);
+}
+
+.legacy-tree.is-illuminated .legacy-card[data-state="past"] {
+    opacity: 0.85;
+    filter: none;
+}
+
+/* ─── Generation 3: two-column ─── */
+.legacy-gen-3 {
+    width: 100%;
+    max-width: 980px;
+}
+
+.legacy-gen-3-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    position: relative;
+    z-index: 1;
+}
+
+.legacy-branch-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.legacy-branch-side .legacy-node-wrapper {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.legacy-branch-side .legacy-card {
+    width: 100%;
+    max-width: 100%;
+}
+
+.legacy-card-gen3 .legacy-card-inner {
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+    align-items: stretch;
+}
+
+.legacy-card-top {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.legacy-card-gen3 .legacy-portrait-wrap {
+    width: 130px;
+    height: 170px;
+}
+
+.legacy-card-gen3 .legacy-portrait-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.legacy-card-body-row {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+}
+
+.legacy-card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.legacy-company-expertise {
+    display: flex;
+    flex-direction: column;
+}
+
+.expertise-list {
+    list-style: none;
+    padding: 0;
+    margin: 4px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.expertise-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.76rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.75);
+}
+
+.expertise-list li svg {
+    color: #C8A261;
+    flex-shrink: 0;
+}
+
+.legacy-card-bottom {
+    border-top: 1px solid rgba(200,162,97,0.15);
+    padding-top: 12px;
+    width: 100%;
+}
+
+.legacy-qualifications-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 16px;
+    margin-top: 8px;
+}
+
+.qual-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.75);
+    background: rgba(13,35,70,0.4);
+    border: 1px solid rgba(200,162,97,0.1);
+    border-radius: 6px;
+    padding: 4px 10px;
+}
+
+/* ─── Bottom Ribbon Card ─── */
+.legacy-bottom-ribbon-wrap {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.legacy-ribbon-card {
+    background: rgba(13,35,70,0.6);
+    border: 1px solid rgba(200,162,97,0.22);
+    border-radius: 14px;
+    padding: 20px 28px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.legacy-ribbon-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(200,162,97,0.4);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+}
+
+.ribbon-card-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ribbon-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #C8A261;
+    margin: 0;
+}
+
+.ribbon-services-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.ribbon-service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+}
+
+.ribbon-icon {
+    color: #C8A261;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.ribbon-service-item:hover .ribbon-icon {
+    transform: scale(1.1);
+}
+
+.ribbon-service-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* ─── Closing caption ─── */
+.legacy-closing-caption {
+    margin-top: 60px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1);
+    width: 100%;
+    max-width: 980px;
+    text-align: center;
+}
+
+.legacy-closing-caption.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.legacy-caption-inner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.legacy-caption-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(200,162,97,0.4), transparent);
+}
+
+.legacy-closing-caption p {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.55);
+    font-style: italic;
+    margin: 0;
+    white-space: nowrap;
+    padding: 0 8px;
+}
+
+/* ─── Contribution hover effect ─── */
+.legacy-contribution-text {
+    position: relative;
+    padding-left: 12px;
+    border-left: 2px solid rgba(200,162,97,0);
+    transition: border-color 0.35s ease, padding-left 0.35s ease, transform 0.35s ease;
+}
+
+.legacy-card[data-state="active"]:hover .legacy-contribution-text {
+    border-left-color: rgba(200,162,97,0.5);
+    transform: translateX(4px);
+}
+
+/* ─── Grid Layout & Timeline Redesign ─── */
+.legacy-grid-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 48px;
+    align-items: start;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.legacy-left-column {
+    width: 100%;
+    position: relative;
+}
+
+.legacy-right-column {
+    width: 100%;
+    position: sticky;
+    top: 100px;
+}
+
+/* Metadata row inside cards */
+.legacy-meta-row {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: #C8A261;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+}
+
+.meta-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+/* Company Evolution Timeline Panel */
+.company-evolution-panel {
+    background: rgba(13, 35, 70, 0.45);
+    border: 1px solid rgba(200, 162, 97, 0.15);
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.company-evolution-panel:hover {
+    border-color: rgba(200, 162, 97, 0.35);
+    box-shadow: 0 24px 50px rgba(0,0,0,0.4);
+}
+
+.evolution-header {
+    background: rgba(7, 24, 46, 0.8);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(200, 162, 97, 0.15);
+}
+
+.evolution-header h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #C8A261;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.evolution-body {
+    padding: 35px 25px;
+    position: relative;
+}
+
+.evolution-timeline {
+    position: relative;
+    padding-left: 64px;
+}
+
+.evolution-line {
+    position: absolute;
+    left: 24px;
+    top: 24px;
+    bottom: 24px;
+    width: 2px;
+    background: linear-gradient(to bottom, #C8A261 80%, rgba(200, 162, 97, 0.2));
+}
+
+.evolution-item {
+    position: relative;
+    margin-bottom: 36px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.evolution-item:last-child {
+    margin-bottom: 0;
+}
+
+.evolution-node {
+    position: absolute;
+    left: -64px;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #07182E;
+    border: 2px solid #C8A261;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #C8A261;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(200,162,97,0.25);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.evolution-item:hover .evolution-node {
+    transform: scale(1.08);
+    background: #C8A261;
+    color: #07182E;
+}
+
+.evolution-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.evolution-year {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.2;
+}
+
+.evolution-company {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #C8A261;
+    margin: 4px 0;
+}
+
+.evolution-desc {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0;
+}
+
+.evolution-bg-sketch {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 180px;
+    height: 140px;
+    background: url('/assets/about/delivery_process_blueprint.png') no-repeat bottom right;
+    background-size: contain;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Responsive updates for the grid layout */
+@media (max-width: 1024px) {
+    .legacy-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .legacy-right-column {
+        position: static;
+    }
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1100px) {
+    .legacy-card-gen1 .legacy-card-cols {
+        grid-template-columns: 1fr 1fr;
+    }
+    .legacy-card-gen2 .legacy-card-cols {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .legacy-gen-3-cols {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .legacy-branch-svg {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-legacy {
+        padding: 80px 0 60px;
+    }
+
+    .legacy-header {
+        margin-bottom: 48px;
+    }
+
+    .legacy-gen-inner {
+        flex-direction: column;
+    }
+
+    .legacy-node-wrapper {
+        width: 100%;
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+
+    .legacy-card-inner {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center;
+        gap: 16px;
+        padding: 20px;
+    }
+
+    .legacy-portrait-wrap,
+    .legacy-card-gen3 .legacy-portrait-wrap {
+        width: 130px !important;
+        height: 170px !important;
+        margin: 0 auto;
+    }
+
+    .legacy-portrait-wrap img,
+    .legacy-card-gen3 .legacy-portrait-wrap img {
+        height: 100% !important;
+    }
+
+    .legacy-portrait-wrap img[src*="saandeep-malhotra"] {
+        object-position: 28% 30% !important;
+    }
+
+    .legacy-portrait-wrap img[src*="balbir-malhotra"] {
+        object-position: 55% 55% !important;
+    }
+
+    .legacy-card-cols {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+    }
+
+    .kumar-services-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px;
+    }
+
+    .legacy-card-top {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .legacy-card-body-row {
+        flex-direction: column !important;
+        gap: 16px;
+    }
+
+    .expertise-list li {
+        justify-content: center;
+    }
+
+    .legacy-qualifications-row {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 8px;
+    }
+
+    .ribbon-services-row {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px;
+    }
+
+    .legacy-closing-caption p {
+        white-space: normal;
+        font-size: 0.85rem;
+    }
+
+    .legacy-era-watermark {
+        display: none;
+    }
+}
+
+/* ─── Reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+    .legacy-card,
+    .legacy-card[data-state="upcoming"],
+    .legacy-card[data-state="active"],
+    .legacy-card[data-state="past"] {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
+        pointer-events: auto !important;
+    }
+
+    .qual-badge {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .legacy-closing-caption {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .legacy-node.is-active .node-pulse-ring {
+        animation: none;
+    }
+}
